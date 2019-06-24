@@ -1,17 +1,14 @@
 <template>
   <core-app>
-    <v-content fill-height>
-      <nuxt/>
-    </v-content>
+    <nuxt/>
   </core-app>
 </template>
 
 <script>
 export default {
-  name: "LayoutDefault"
+  name: "LayoutEmpty"
 };
 </script>
-
 
 <style>
 </style>

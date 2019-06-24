@@ -1,72 +1,82 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        devlights-works-frontend
-      </h1>
-      <h2 class="subtitle">
-        My top-notch Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <v-container>
+      <v-layout wrap row>
+        <v-flex xs12 text-xs-center my-5>
+          <h1 class="display-1 mb-3">WORK</h1>
+          <p
+            class="subheading font-weight-thin"
+          >We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they’re at. Here’s what we've accomplished with our clients.</p>
+        </v-flex>
+      </v-layout>
+    </v-container>
+
+    <v-container fluid pa-0 class="container-works">
+      <v-layout row wrap>
+        <v-flex v-for="work in works" :key="work._id" xs12 sm6>
+          <nuxt-link :to="`/works/${work._id}`" style="text-decoration: none;">
+            <v-card flat tile>
+              <v-img :src="work.client.urlImage" :aspect-ratio="16/9" class="img-client">
+                <v-container fill-height>
+                  <v-layout align-end>
+                    <v-flex
+                      xs12
+                      :class="{ 'ml-5': !$vuetify.breakpoint.xs, 'ml-2': $vuetify.breakpoint.xs }"
+                    >
+                      <h3 class="text-uppercase headline white--text">{{ work.client.name }}</h3>
+                      <div class="line white my-2"></div>
+                      <p
+                        class="text-uppercase body-2 font-weight-thin white--text"
+                      >{{ work.services.toString() }}</p>
+                    </v-flex>
+                  </v-layout>
+                </v-container>
+              </v-img>
+            </v-card>
+          </nuxt-link>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapState } from "vuex";
 
 export default {
-  components: {
-    Logo
+  name: "PageWorks",
+
+  layout: "home",
+
+  async fetch({ store }) {
+    return store.dispatch("getWorks");
+  },
+
+  computed: {
+    ...mapState(["works"])
   }
-}
+};
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss">
+.container-works {
+  background-color: #cccccc;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  .img-client {
+    .v-responsive__content,
+    .v-image__image {
+      transition: 0.5s;
+    }
+    &:hover .v-image__image {
+      transform: scale(1.2);
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+    .v-responsive__content {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+    &:hover .v-responsive__content {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 </style>
