@@ -1,10 +1,11 @@
 const page = {
-  title: "Devlights works",
-  description: "We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they're at. Here's what we've accomplished with our clients.",
+  title: 'Devlights works',
+  description:
+    "We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they're at. Here's what we've accomplished with our clients.",
   safe_img: `/safe_image.png`,
-  safe_img_alt: "Image of devlights works",
+  safe_img_alt: 'Image of devlights works',
   favicon: `/devlights-icon.png`
-}
+};
 
 module.exports = {
   mode: 'universal',
@@ -16,28 +17,28 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      
+
       {
-        hid: "description",
-        name: "description",
+        hid: 'description',
+        name: 'description',
         content: `${page.description}`
       },
-      
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: `${page.title}` },
-      { name: "twitter:description", content: `${page.description}` },
-      { name: "twitter:image", content: `${page.safe_img}` },
-      { name: "twitter:image:alt", content: `${page.safe_img_alt}` },
 
-      { property: "og:type", content: "website" },
-      { property: "og:title", content: `${page.title}` },
-      { property: "og:url", content: `${FRONT_URL}` },
-      { property: "og:image", content: `${page.safe_img}` },
-      { property: "og:site_name", content: `${page.title}` },
-      { property: "og:description", content: `${page.description}` }
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: `${page.title}` },
+      { name: 'twitter:description', content: `${page.description}` },
+      { name: 'twitter:image', content: `${page.safe_img}` },
+      { name: 'twitter:image:alt', content: `${page.safe_img_alt}` },
+
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: `${page.title}` },
+      { property: 'og:url', content: `${FRONT_URL}` },
+      { property: 'og:image', content: `${page.safe_img}` },
+      { property: 'og:site_name', content: `${page.title}` },
+      { property: 'og:description', content: `${page.description}` }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: `${page.favicon}` }
+      { rel: 'icon', type: 'image/x-icon', href: `${page.favicon}` },
       { rel: 'icon', type: 'image/x-icon', href: '/devlights-icon.png' },
       {
         rel: 'stylesheet',
