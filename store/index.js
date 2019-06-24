@@ -17,7 +17,9 @@ export const getters = {
 export const actions = {
   async getWorks({ commit, state }) {
     if (state.works.length === 0) {
-      const works = await this.$axios.$get('/data/works.json');
+      const works = await this.$axios.$get(
+        'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
+      );
       commit('SET_WORKS', works);
     }
   },
@@ -25,7 +27,9 @@ export const actions = {
   async getWork({ commit, getters }, { _id }) {
     this.$router.push('/');
     if (!getters.getWork(_id)) {
-      const works = await this.$axios.$get('/data/works.json');
+      const works = await this.$axios.$get(
+        'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
+      );
       commit('SET_WORKS', works);
     }
   }
