@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="work">
     <v-toolbar
       app
       height="64px"
@@ -133,14 +133,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   layout: "empty",
 
-  async fetch({ store, params }) {
-    await store.dispatch("getWork", { _id: params.id });
-  },
+  watchQuery: ["_id"],
+
+  // async fetch({ store, params }) {
+  //   await store.dispatch("getWork", { _id: params.id });
+  // },
 
   data() {
     return {
@@ -148,8 +150,10 @@ export default {
     };
   },
 
-  mounted() {
+  async mounted() {
     window.onscroll = this.handleScroll;
+    const _id = parseInt(this.$route.query._id);
+    await this.getWork({ _id });
   },
 
   beforeDestroy() {
@@ -158,11 +162,13 @@ export default {
 
   computed: {
     work() {
-      return this.$store.getters.getWork(this.$route.params.id);
+      return this.$store.getters.getWork(parseInt(this.$route.query._id));
     }
   },
 
   methods: {
+    ...mapActions(["getWork"]),
+
     handleScroll() {
       this.colorToolbar = document.documentElement.scrollTop > 60;
     }

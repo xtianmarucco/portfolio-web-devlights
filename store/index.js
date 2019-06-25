@@ -30,7 +30,8 @@ export const actions = {
         'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
       );
       commit('SET_WORKS', works);
-      this.$router.push('/');
+
+      if (!getters.getWork(_id)) this.$router.push('/');
     }
   }
 };
