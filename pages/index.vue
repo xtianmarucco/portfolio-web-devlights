@@ -2,7 +2,11 @@
   <div>
     <v-container>
       <v-layout wrap row>
-        <v-flex xs12 text-xs-center my-5>
+        <v-flex
+          xs12
+          text-xs-center
+          :class="{ 'my-5': $vuetify.breakpoint.smAndUp, 'my-3': $vuetify.breakpoint.xs }"
+        >
           <h1 class="display-1 mb-3">WORK</h1>
           <p
             class="subheading font-weight-thin"
@@ -16,7 +20,12 @@
         <v-flex v-for="work in works" :key="work._id" xs12 sm6>
           <nuxt-link :to="`/works/${work._id}`" style="text-decoration: none;">
             <v-card flat tile>
-              <v-img :src="work.client.urlImage" :aspect-ratio="16/9" class="img-client">
+              <v-img
+                :src="work.client.urlImage"
+                :aspect-ratio="16/9"
+                class="img-client"
+                :alt="`${work.client.name} image`"
+              >
                 <v-container fill-height>
                   <v-layout align-end>
                     <v-flex

@@ -25,12 +25,12 @@ export const actions = {
   },
 
   async getWork({ commit, getters }, { _id }) {
-    this.$router.push('/');
     if (!getters.getWork(_id)) {
       const works = await this.$axios.$get(
         'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
       );
       commit('SET_WORKS', works);
+      this.$router.push('/');
     }
   }
 };

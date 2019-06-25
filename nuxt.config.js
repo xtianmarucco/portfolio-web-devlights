@@ -1,5 +1,6 @@
 const page = {
   title: 'Devlights works',
+  short_name: 'DL - Works',
   description:
     "We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they're at. Here's what we've accomplished with our clients.",
   safe_img: `/safe_image.png`,
@@ -32,7 +33,6 @@ module.exports = {
 
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: `${page.title}` },
-      { property: 'og:url', content: `${FRONT_URL}` },
       { property: 'og:image', content: `${page.safe_img}` },
       { property: 'og:site_name', content: `${page.title}` },
       { property: 'og:description', content: `${page.description}` }
@@ -73,6 +73,17 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  manifest: {
+    name: page.title,
+    short_name: page.short_name,
+    lang: 'en-US',
+    start_url: '/',
+    scope: '/',
+    display: 'standalone',
+    background_color: '#fff',
+    theme_color: '#518bc0'
+  },
   /*
    ** Build configuration
    */

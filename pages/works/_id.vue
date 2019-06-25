@@ -9,14 +9,24 @@
         'elevation-6': colorToolbar,
         'elevation-0': !colorToolbar,
       }"
+      scroll-off-screen
+      :scroll-threshold="25"
     >
+      <v-btn icon to="/">
+        <v-icon>arrow_back</v-icon>
+      </v-btn>
       <logo/>
       <v-spacer></v-spacer>
     </v-toolbar>
 
-    <v-img :src="work.client.urlImage" :aspect-ratio="16/9" class="img-client">
+    <v-img
+      :src="work.client.urlImage"
+      :aspect-ratio="16/9"
+      class="img-client"
+      :alt="`${work.client.name} image`"
+    >
       <v-container fill-height>
-        <v-layout align-center>
+        <v-layout align-center :class="{ 'py-5': $vuetify.breakpoint.xs }">
           <v-flex
             xs12
             text-xs-center
@@ -43,44 +53,68 @@
             target="_blank"
             dark
             :href="work.urlWork"
-          >Ver trabajo</v-btn>
+          >CHECK IT OUT</v-btn>
         </v-flex>
       </v-layout>
     </v-container>
 
-    <div class="py-5" style="background-color: #E9E9E9;">
+    <div class="py-5" style="background-color: #E9E9E9;" v-if="work.urlImages.notebook">
       <v-container>
         <v-layout row wrap>
           <v-flex xs12>
-            <v-img :src="work.urlImages.notebook"></v-img>
+            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} notebook size image`"></v-img>
           </v-flex>
         </v-layout>
       </v-container>
     </div>
 
-    <div class="py-5">
+    <div class="py-5" v-if="work.urlImages.mobile && work.urlImages.mobile.length">
       <v-container>
         <v-layout row wrap>
-          <v-flex xs12 md6 v-for="imgMobile in work.urlImages.mobile" :key="imgMobile">
-            <v-img :src="imgMobile" class="mx-2"></v-img>
+          <v-flex
+            xs12
+            md6
+            v-for="(imgMobile, indexImgMobile) in work.urlImages.mobile"
+            :key="imgMobile"
+          >
+            <v-img
+              :src="imgMobile"
+              class="mx-2"
+              :alt="`${work.client.name} mobile size image - ${indexImgMobile}`"
+            ></v-img>
           </v-flex>
         </v-layout>
       </v-container>
     </div>
 
-    <div class="py-5" style="background-color: #E9E9E9;">
+    <div
+      class="py-5"
+      style="background-color: #E9E9E9;"
+      v-if="work.urlImages.desktop && work.urlImages.desktop.length"
+    >
       <v-container>
         <v-layout row wrap>
-          <v-flex xs12 md6 v-for="imgDesktop in work.urlImages.desktop" :key="imgDesktop">
-            <v-img :src="imgDesktop" class="mx-2"></v-img>
+          <v-flex
+            xs12
+            md6
+            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
+            :key="imgDesktop"
+          >
+            <v-img
+              :src="imgDesktop"
+              class="mx-2"
+              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
+            ></v-img>
           </v-flex>
         </v-layout>
       </v-container>
     </div>
 
-    <div>
-      <v-img :src="work.urlImages.home"></v-img>
-    </div>
+    <v-img
+      v-if="work.urlImages.home"
+      :src="work.urlImages.home"
+      :alt="`${work.client.name} home image`"
+    ></v-img>
 
     <v-container>
       <v-layout row wrap my-5>
@@ -99,18 +133,13 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
 import { mapGetters } from "vuex";
 
 export default {
-  components: {
-    Logo
-  },
-
   layout: "empty",
 
-  fetch({ store, params }) {
-    return store.dispatch("getWork", { _id: params.id });
+  async fetch({ store, params }) {
+    await store.dispatch("getWork", { _id: params.id });
   },
 
   data() {

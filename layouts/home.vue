@@ -1,6 +1,6 @@
 <template>
   <core-app>
-    <v-toolbar app class="elevation-6" height="60px">
+    <v-toolbar app class="elevation-6" height="60px" scroll-off-screen :scroll-threshold="25">
       <logo/>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -12,13 +12,8 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
 export default {
-  name: "LayoutHome",
-
-  components: {
-    Logo
-  }
+  name: "LayoutHome"
 };
 </script>
 
