@@ -8,7 +8,18 @@ const page = {
   favicon: `/devlights-icon.png`
 };
 
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/works/'
+        }
+      }
+    : {};
+
 module.exports = {
+  ...routerBase,
+
   mode: 'universal',
   /*
    ** Headers of the page
@@ -39,7 +50,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: `${page.favicon}` },
-      { rel: 'icon', type: 'image/x-icon', href: '/devlights-icon.png' },
       {
         rel: 'stylesheet',
         href:

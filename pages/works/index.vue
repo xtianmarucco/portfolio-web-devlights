@@ -151,9 +151,13 @@ export default {
   },
 
   async mounted() {
-    window.onscroll = this.handleScroll;
-    const _id = parseInt(this.$route.query._id);
-    await this.getWork({ _id });
+    try {
+      window.onscroll = this.handleScroll;
+      const _id = parseInt(this.$route.query._id);
+      await this.getWork({ _id });
+    } catch (error) {
+      this.$router.push("/");
+    }
   },
 
   beforeDestroy() {

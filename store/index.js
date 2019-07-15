@@ -17,21 +17,24 @@ export const getters = {
 export const actions = {
   async getWorks({ commit, state }) {
     if (state.works.length === 0) {
-      const works = await this.$axios.$get(
-        'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
-      );
+      const works = await this.$axios.$get('/data/json/works.json');
       commit('SET_WORKS', works);
     }
   },
 
   async getWork({ commit, getters }, { _id }) {
-    if (!getters.getWork(_id)) {
-      const works = await this.$axios.$get(
-        'https://mauriciohernancabrera.github.io/devlights-works-data/data/works.json'
-      );
-      commit('SET_WORKS', works);
+    return new Promise(async (resolve, reject) => {
+      if (!getters.getWork(_id)) {
+        const works = await this.$axios.$get('/data/json/works.json');
+        commit('SET_WORKS', works);
 
-      if (!getters.getWork(_id)) this.$router.push('/');
-    }
+        if (getters.getWork(_id)) {
+          resolve();
+          console.log('No paso');
+        } else {
+          reject('No se encontro el trabajo');
+        }
+      }
+    });
   }
 };
