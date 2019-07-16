@@ -9,9 +9,7 @@ export const mutations = {
 };
 
 export const getters = {
-  getWork: state => work_id => {
-    return state.works.find(w => w._id == work_id) || null;
-  }
+  getWork: state => work_id => state.works.find(w => w._id == work_id) || null
 };
 
 export const actions = {
@@ -30,7 +28,6 @@ export const actions = {
 
         if (getters.getWork(_id)) {
           resolve();
-          console.log('No paso');
         } else {
           reject('No se encontro el trabajo');
         }

@@ -138,12 +138,6 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   layout: "empty",
 
-  watchQuery: ["_id"],
-
-  // async fetch({ store, params }) {
-  //   await store.dispatch("getWork", { _id: params.id });
-  // },
-
   data() {
     return {
       colorToolbar: false
@@ -153,7 +147,7 @@ export default {
   async mounted() {
     try {
       window.onscroll = this.handleScroll;
-      const _id = parseInt(this.$route.query._id);
+      const _id = parseInt(this.$route.query.id);
       await this.getWork({ _id });
     } catch (error) {
       this.$router.push("/");
@@ -166,7 +160,7 @@ export default {
 
   computed: {
     work() {
-      return this.$store.getters.getWork(parseInt(this.$route.query._id));
+      return this.$store.getters.getWork(parseInt(this.$route.query.id));
     }
   },
 

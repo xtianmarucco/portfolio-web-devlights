@@ -1,24 +1,22 @@
+const FRONT_URL =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? 'https://work.devlights.com'
+    : 'http://localhost:3000';
+
 const page = {
   title: 'Devlights works',
   short_name: 'DL - Works',
   description:
     "We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they're at. Here's what we've accomplished with our clients.",
-  safe_img: `/safe_image.png`,
+  safe_img: `${FRONT_URL}/safe_image.png`,
   safe_img_alt: 'Image of devlights works',
-  favicon: `/devlights-icon.png`
+  favicon: `${FRONT_URL}/icon.png`
 };
 
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/works/'
-        }
-      }
-    : {};
-
 module.exports = {
-  ...routerBase,
+  env: {
+    FRONT_URL
+  },
 
   mode: 'universal',
   /*
@@ -82,7 +80,9 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: FRONT_URL
+  },
 
   manifest: {
     name: page.title,
