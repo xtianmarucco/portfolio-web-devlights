@@ -7,10 +7,10 @@
           text-xs-center
           :class="{ 'my-5': $vuetify.breakpoint.smAndUp, 'my-3': $vuetify.breakpoint.xs }"
         >
-          <h1 class="display-1 mb-3">WORK</h1>
+          <h1 class="display-1 mb-3">TRABAJOS</h1>
           <p
             class="subheading font-weight-thin"
-          >We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they’re at. Here’s what we've accomplished with our clients.</p>
+          >Nos enorgullecemos de poder brindar a las marcas soluciones integrales, sin importar en qué etapa se encuentren. Esto es lo que hemos logrado con nuestros clientes.</p>
         </v-flex>
       </v-layout>
     </v-container>
@@ -18,7 +18,7 @@
     <v-container fluid pa-0 class="container-works">
       <v-layout row wrap>
         <v-flex v-for="work in works" :key="work._id" xs12 sm6>
-          <nuxt-link :to="`/works/${work._id}`" style="text-decoration: none;">
+          <nuxt-link :to="`/es/works/${work._id}`" style="text-decoration: none;">
             <v-card flat tile>
               <v-img
                 :src="work.client.urlImage"

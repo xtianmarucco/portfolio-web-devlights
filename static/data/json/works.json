@@ -2,7 +2,7 @@
   {
     "_id": 1,
     "client": {
-      "urlImage": "./data/images/clients/volcom.jpg",
+      "urlImage": "/data/images/clients/volcom.jpg",
       "name": "Volcom"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
@@ -28,7 +28,7 @@
   {
     "_id": 2,
     "client": {
-      "urlImage": "./data/images/clients/crankbrothers.jpg",
+      "urlImage": "/data/images/clients/crankbrothers.jpg",
       "name": "crankbrothers"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
@@ -54,7 +54,7 @@
   {
     "_id": 3,
     "client": {
-      "urlImage": "./data/images/clients/ROC.jpg",
+      "urlImage": "/data/images/clients/ROC.jpg",
       "name": "ROC"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
@@ -80,7 +80,7 @@
   {
     "_id": 4,
     "client": {
-      "urlImage": "./data/images/clients/Apt2B.jpg",
+      "urlImage": "/data/images/clients/Apt2B.jpg",
       "name": "Apt2B"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
@@ -106,7 +106,7 @@
   {
     "_id": 5,
     "client": {
-      "urlImage": "./data/images/clients/The Hundreds.jpg",
+      "urlImage": "/data/images/clients/The Hundreds.jpg",
       "name": "The Hundreds"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
@@ -132,7 +132,7 @@
   {
     "_id": 6,
     "client": {
-      "urlImage": "./data/images/clients/Enjoy Life Foods.jpg",
+      "urlImage": "/data/images/clients/Enjoy Life Foods.jpg",
       "name": "Enjoy Life Foods"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",

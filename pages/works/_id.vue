@@ -15,7 +15,7 @@
       <v-btn icon to="/">
         <v-icon>arrow_back</v-icon>
       </v-btn>
-      <logo/>
+      <logo />
       <v-spacer></v-spacer>
     </v-toolbar>
 
@@ -147,7 +147,7 @@ export default {
   async mounted() {
     try {
       window.onscroll = this.handleScroll;
-      const _id = parseInt(this.$route.query.id);
+      const _id = parseInt(this.$route.params.id);
       await this.getWork({ _id });
     } catch (error) {
       this.$router.push("/");
@@ -160,7 +160,7 @@ export default {
 
   computed: {
     work() {
-      return this.$store.getters.getWork(parseInt(this.$route.query.id));
+      return this.$store.getters.getWork(parseInt(this.$route.params.id));
     }
   },
 

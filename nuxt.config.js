@@ -1,11 +1,14 @@
-const FRONT_URL =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? 'https://work.devlights.com'
-    : 'http://localhost:3000';
+let FRONT_URL = '';
+
+if (process.env.DEPLOY_ENV === 'GH_PAGES') {
+  FRONT_URL = 'https://work.devlights.com';
+} else {
+  FRONT_URL = 'http://localhost:3000';
+}
 
 const page = {
   title: 'Devlights works',
-  short_name: 'DL - Works',
+  short_name: 'DL: Works',
   description:
     "We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they're at. Here's what we've accomplished with our clients.",
   safe_img: `${FRONT_URL}/safe_image.png`,
@@ -48,10 +51,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: `${page.favicon}` },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp'
+      // },
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp'
+          'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp'
       }
     ]
   },

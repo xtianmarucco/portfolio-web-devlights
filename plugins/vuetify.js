@@ -4,13 +4,15 @@ import {
   VFlex,
   VLayout,
   VToolbar,
+  VToolbarItems,
   VBtn,
   VIcon,
   VSpacer,
   VContent,
   VContainer,
   VCard,
-  VImg
+  VImg,
+  VSelect
 } from 'vuetify/lib';
 
 import { Ripple, Scroll, ClickOutside } from 'vuetify/es5/directives';
@@ -24,13 +26,15 @@ Vue.use(Vuetify, {
     VFlex,
     VLayout,
     VToolbar,
+    VToolbarItems,
     VBtn,
     VIcon,
     VSpacer,
     VContent,
     VContainer,
     VCard,
-    VImg
+    VImg,
+    VSelect
   },
   directives: {
     Ripple,
