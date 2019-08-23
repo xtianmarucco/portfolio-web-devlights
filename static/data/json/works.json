@@ -2,16 +2,19 @@
   {
     "_id": 1,
     "client": {
-      "urlImage": "/data/images/clients/volcom.jpg",
-      "name": "Volcom"
+      "urlImage": "/data/images/clients/coverch.png",
+      "name": "CREATIVE HUMANS"
     },
-    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
-    "urlWork": "https://www.volcom.com/",
+    "about":"About Creative Humans",
+    "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
+    "urlWork": "https://www.creativehumans.com/",
     "urlImages": {
-      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
+      "notebook": "./../../data/images/clients/chlaptop.png",
       "mobile": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
+        "./../../data/images/clients/ch1.png",
+        "./../../data/images/clients/ch2.png",
+        "./../../data/images/clients/ch3.png",
+        "./../../data/images/clients/ch4.png"
       ],
       "desktop": [
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
@@ -31,7 +34,7 @@
       "urlImage": "/data/images/clients/crankbrothers.jpg",
       "name": "crankbrothers"
     },
-    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
+    "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content",
     "urlWork": "https://www.volcom.com/",
     "urlImages": {
       "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
@@ -136,7 +139,7 @@
       "name": "Enjoy Life Foods"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
-    "urlWork": "https://www.volcom.com/",
+    "urlWork": "https://www.volcom/",
     "urlImages": {
       "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
       "mobile": [

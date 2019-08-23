@@ -70,11 +70,18 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~/assets/style/app.styl'],
+  css: [
+    '~/assets/style/app.styl',
+    'aos/dist/aos.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-components', '~/plugins/vuetify'],
+  plugins: [
+    '~/plugins/vue-components',
+    '~/plugins/vuetify',
+    { ssr: false, src: '~/plugins/aos' } //that how yo force nuxt to install the galery 
+  ],
   /*
    ** Nuxt.js modules
    */

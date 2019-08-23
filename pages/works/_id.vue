@@ -1,8 +1,8 @@
 <template>
   <div v-if="work">
-    <v-toolbar
+    <v-toolbar 
       app
-      height="64px"
+      height="80px"
       flat
       :color="!colorToolbar? 'transparent' : 'white'"
       :class="{
@@ -11,12 +11,14 @@
       }"
       scroll-off-screen
       :scroll-threshold="25"
+      to="/https://www.devlights.com/"
     >
-      <v-btn icon to="/">
-        <v-icon>arrow_back</v-icon>
-      </v-btn>
-      <logo />
+
+      <logo/>
       <v-spacer></v-spacer>
+      <v-btn to="/"> <v-icon > arrow_left </v-icon>
+        PORTFOLIO
+      </v-btn>
     </v-toolbar>
 
     <v-img
@@ -45,7 +47,7 @@
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 text-xs-center my-5>
-          <h3 class="display-1 mb-2">The Story</h3>
+          <h3 class="display-1 mb-2">{{work.about}}</h3>
           <p class="subheading font-weight-thin">{{ work.story }}</p>
           <v-btn
             depressed
@@ -109,19 +111,24 @@
         </v-layout>
       </v-container>
     </div>
-
+<!-- 
     <v-img
       v-if="work.urlImages.home"
       :src="work.urlImages.home"
       :alt="`${work.client.name} home image`"
     ></v-img>
-
+-->
     <v-container>
       <v-layout row wrap my-5>
         <v-flex xs12 text-xs-center>
-          <h4 class="display-1 font-weight-thin">SERVICES</h4>
-          <div class="line grey darken-4 mx-auto my-3"></div>
+          <h4 class="display-1 font-weight-thin">TECHNOLOGIES USED IN THIS PROJECT </h4>
+         <div class="line grey darken-4 mx-auto my-3"></div>  <!-- SEPARADOR  -->
         </v-flex>
+        <v-layout row wrap my-4>
+          <v-flex xs12 md4 text-xs-center v-for="service in work.services" :key="service">
+            <p class="subheading font-weight-thin ma-0">{{ service }}</p>
+          </v-flex>
+        </v-layout>
         <v-layout row wrap my-4>
           <v-flex xs12 md4 text-xs-center v-for="service in work.services" :key="service">
             <p class="subheading font-weight-thin ma-0">{{ service }}</p>
@@ -129,6 +136,7 @@
         </v-layout>
       </v-layout>
     </v-container>
+
   </div>
 </template>
 

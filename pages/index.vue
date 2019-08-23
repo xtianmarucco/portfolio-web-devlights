@@ -17,7 +17,7 @@
 
     <v-container fluid pa-0 class="container-works">
       <v-layout row wrap>
-        <v-flex v-for="work in works" :key="work._id" xs12 sm6>
+        <v-flex v-for="work in works" :key="work._id" xs12 sm6 data-aos="fade-up">
           <nuxt-link :to="`/works/${work._id}`" style="text-decoration: none;">
             <v-card flat tile>
               <v-img
