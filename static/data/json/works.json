@@ -5,27 +5,35 @@
       "urlImage": "/data/images/clients/coverch.png",
       "name": "CREATIVE HUMANS"
     },
-    "about":"About Creative Humans",
+    "about": "About Creative Humans",
     "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
+    "story2": "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
     "urlWork": "https://www.creativehumans.com/",
     "urlImages": {
       "notebook": "./../../data/images/clients/chlaptop.png",
-      "mobile": [
-        "./../../data/images/clients/ch1.png",
-        "./../../data/images/clients/ch2.png",
-        "./../../data/images/clients/ch3.png",
-        "./../../data/images/clients/ch4.png"
+      "imgMobile": [
+        "/data/images/ch1.gif",
+        "/data/images/ch2.gif",
+        "/data/images/ch4.gif"
       ],
+
       "desktop": [
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/html-logo.gif",
+        "/data/images/footer/css-logo.gif",
+        "/data/images/footer/jquery-logo.gif",
+        "/data/images/footer/nodejs-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
     },
     "services": [
-      "SHOPIFY INTEGRATION",
-      "MULTIPLE INTERNATIONAL STORES",
-      "SHOPIFY PLUS BUILD"
+      "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
+      "As you browse, filter your video search by industry, style, budget, location, union affiliation and more"
     ]
   },
   {
@@ -35,6 +43,7 @@
       "name": "crankbrothers"
     },
     "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content",
+
     "urlWork": "https://www.volcom.com/",
     "urlImages": {
       "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
@@ -46,7 +55,13 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/jquery-logo.gif",
+        "/data/images/footer/nodejs-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
     },
     "services": [
       "SHOPIFY INTEGRATION",
@@ -72,7 +87,12 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/html-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
     },
     "services": [
       "SHOPIFY INTEGRATION",
@@ -98,7 +118,12 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/html-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
     },
     "services": [
       "SHOPIFY INTEGRATION",
@@ -124,7 +149,12 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/jquery-logo.gif",
+        "/data/images/footer/nodejs-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
     },
     "services": [
       "SHOPIFY INTEGRATION",
@@ -150,7 +180,12 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
       ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg"
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/html-logo.gif",
+        "/data/images/footer/css-logo.gif"
+      ]
     },
     "services": [
       "SHOPIFY INTEGRATION",

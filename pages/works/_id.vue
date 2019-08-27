@@ -1,6 +1,6 @@
 <template>
-  <div v-if="work">
-    <v-toolbar 
+  <div v-if="work" class>
+    <v-toolbar
       app
       height="80px"
       flat
@@ -13,11 +13,10 @@
       :scroll-threshold="25"
       to="/https://www.devlights.com/"
     >
-
-      <logo/>
+      <logo />
       <v-spacer></v-spacer>
-      <v-btn to="/"> <v-icon > arrow_left </v-icon>
-        PORTFOLIO
+      <v-btn to="/">
+        <v-icon>arrow_left</v-icon>PORTFOLIO
       </v-btn>
     </v-toolbar>
 
@@ -28,16 +27,16 @@
       :alt="`${work.client.name} image`"
     >
       <v-container fill-height>
-        <v-layout align-center :class="{ 'py-5': $vuetify.breakpoint.xs }">
+        <v-layout data-aos="fade-up" align-center :class="{ 'py-5': $vuetify.breakpoint.xs }">
           <v-flex
             xs12
             text-xs-center
             :class="{ 'ml-5': !$vuetify.breakpoint.xs, 'ml-2': $vuetify.breakpoint.xs }"
           >
-            <h1 class="text-uppercase display-1 font-weight-thin white--text">{{ work.client.name }}</h1>
-            <div class="line white my-2 mx-auto"></div>
+            <h1 class="text-uppercase display-2 font-weight-bold white--text">{{ work.client.name }}</h1>
+            <div class="line white my-3 mx-auto"></div>
             <p
-              class="text-uppercase title font-weight-thin white--text"
+              class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
           </v-flex>
         </v-layout>
@@ -49,7 +48,9 @@
         <v-flex xs12 text-xs-center my-5>
           <h3 class="display-1 mb-2">{{work.about}}</h3>
           <p class="subheading font-weight-thin">{{ work.story }}</p>
+          <p class="subheading font-weight-thin">{{ work.story2 }}</p>
           <v-btn
+            class="pulse"
             depressed
             color="grey darken-3"
             target="_blank"
@@ -60,8 +61,8 @@
       </v-layout>
     </v-container>
 
-    <div class="py-5" style="background-color: #E9E9E9;" v-if="work.urlImages.notebook">
-      <v-container>
+    <div class="py-5" v-if="work.urlImages.notebook">
+      <v-container data-aos="zoom-in">
         <v-layout row wrap>
           <v-flex xs12>
             <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} notebook size image`"></v-img>
@@ -70,30 +71,17 @@
       </v-container>
     </div>
 
-    <div class="py-5" v-if="work.urlImages.mobile && work.urlImages.mobile.length">
-      <v-container>
-        <v-layout row wrap>
-          <v-flex
-            xs12
-            md6
-            v-for="(imgMobile, indexImgMobile) in work.urlImages.mobile"
-            :key="imgMobile"
-          >
-            <v-img
-              :src="imgMobile"
-              class="mx-2"
-              :alt="`${work.client.name} mobile size image - ${indexImgMobile}`"
-            ></v-img>
+    <div>
+      <v-container grid-list-xl>
+        <v-layout row class="grid-tech">
+          <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
+            <img data-aos="flip-right" :src="item" alt />
           </v-flex>
         </v-layout>
       </v-container>
     </div>
 
-    <div
-      class="py-5"
-      style="background-color: #E9E9E9;"
-      v-if="work.urlImages.desktop && work.urlImages.desktop.length"
-    >
+    <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length">
       <v-container>
         <v-layout row wrap>
           <v-flex
@@ -111,32 +99,36 @@
         </v-layout>
       </v-container>
     </div>
-<!-- 
+    <!-- 
     <v-img
       v-if="work.urlImages.home"
       :src="work.urlImages.home"
       :alt="`${work.client.name} home image`"
     ></v-img>
--->
+    -->
+
     <v-container>
       <v-layout row wrap my-5>
         <v-flex xs12 text-xs-center>
-          <h4 class="display-1 font-weight-thin">TECHNOLOGIES USED IN THIS PROJECT </h4>
-         <div class="line grey darken-4 mx-auto my-3"></div>  <!-- SEPARADOR  -->
+          <h4 class="display-1 font-weight-thin">TECHNOLOGIES USED IN THIS PROJECT</h4>
+          <div class="line grey darken-4 mx-auto my-3"></div>
+          <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout row wrap my-4>
-          <v-flex xs12 md4 text-xs-center v-for="service in work.services" :key="service">
-            <p class="subheading font-weight-thin ma-0">{{ service }}</p>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap my-4>
-          <v-flex xs12 md4 text-xs-center v-for="service in work.services" :key="service">
-            <p class="subheading font-weight-thin ma-0">{{ service }}</p>
+        <v-layout row class="grid-tech">
+          <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
+            <img data-aos="fade-up" :src="item" alt />
           </v-flex>
         </v-layout>
       </v-layout>
     </v-container>
 
+    <v-card color="grey lighten-4" tile>
+      <v-toolbar prominent extended>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+        <div class="flex-grow-1"></div>
+      </v-toolbar>
+    </v-card>
   </div>
 </template>
 
@@ -185,7 +177,56 @@ export default {
 <style lang="scss">
 .img-client {
   .v-responsive__content {
-    background-color: rgba(0, 0, 0, 0.25);
+    // background-color: rgba(0, 0, 0, 0.25);
   }
+}
+
+.grid-tech {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+// btn animation
+.pulse {
+  background: #545a68;
+  cursor: pointer;
+  box-shadow: 5 5 5 rgba(36, 36, 37, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(69, 75, 153, 0.575);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(70, 64, 149, 0.52);
+  }
+  100% {
+    -webkit-box-shadow: 8 8 8 8 rgba(68, 96, 149, 0.472);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(46, 59, 173, 0.561);
+    box-shadow: 0 0 0 10px rgba(83, 101, 143, 0.541);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(44, 87, 204, 0.513);
+    box-shadow: 0 0 0 0 rgba(100, 108, 185, 0.554);
+  }
+}
+
+h1 {
+  text-shadow: 3px 5px 2px #474747;
+  color: #ffffff;
 }
 </style>
