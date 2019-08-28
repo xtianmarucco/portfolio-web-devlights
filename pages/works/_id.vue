@@ -122,26 +122,67 @@
       </v-layout>
     </v-container>
 
-    <v-card color="grey lighten-4" tile>
-      <v-toolbar prominent extended>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-container>
+      <v-layout row wrap>
+        <v-flex xs12 text-xs-center>
+          <v-btn dark @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+        </v-flex>
+        <v-navigation-drawer v-model="drawer" app fixed temporary width="560px" right>
+          <v-container>
+            <v-layout row wrap>
+              <v-flex xs12 text-xs-center align-center>
+                <v-form ref="form">
+                  <v-text-field v-model="form.name" label="Name" required></v-text-field>
 
-        <div class="flex-grow-1"></div>
-      </v-toolbar>
-    </v-card>
+                  <v-text-field v-model="form.email" label="Email" required></v-text-field>
+                  <v-textarea v-model="form.message" label="Message" required></v-textarea>
+
+                  <v-btn color="primary" :disabled="$v.$invalid">send message</v-btn>
+                </v-form>
+              </v-flex>
+            </v-layout>
+          </v-container>
+
+          <!-- <v-form ref="form" v-model="valid" lazy-validation>
+            <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
+
+            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+          </v-form>-->
+        </v-navigation-drawer>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
+
+
+    
+
+
 <script>
 import { mapGetters, mapActions } from "vuex";
-
+import { required, email } from "vuelidate/lib/validators";
 export default {
   layout: "empty",
 
   data() {
     return {
-      colorToolbar: false
+      colorToolbar: null,
+      drawer: false,
+      form: {
+        name: "",
+        message: "",
+        email: ""
+      }
     };
+  },
+
+  validations: {
+    form: {
+      name: { required },
+      email: { required, email },
+      message: { required }
+    }
   },
 
   async mounted() {

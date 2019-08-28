@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import { Vuetify, VApp, VGrid, transitions } from 'vuetify';
+import Vue from "vue";
+import { Vuetify, VApp, VGrid, transitions } from "vuetify";
 import {
   VFlex,
   VLayout,
@@ -12,10 +12,19 @@ import {
   VContainer,
   VCard,
   VImg,
-  VSelect
-} from 'vuetify/lib';
+  VSelect,
+  VNavigationDrawer,
+  VList,
+  VListTile,
+  VListTileAction,
+  VListTileContent,
+  VListTileTitle,
+  VForm,
+  VTextField,
+  VTextarea
+} from "vuetify/lib";
 
-import { Ripple, Scroll, ClickOutside } from 'vuetify/es5/directives';
+import { Ripple, Scroll, ClickOutside } from "vuetify/es5/directives";
 // import colors from 'vuetify/es5/util/colors';
 
 Vue.use(Vuetify, {
@@ -34,7 +43,16 @@ Vue.use(Vuetify, {
     VContainer,
     VCard,
     VImg,
-    VSelect
+    VSelect,
+    VNavigationDrawer,
+    VList,
+    VListTile,
+    VListTileAction,
+    VListTileContent,
+    VListTileTitle,
+    VForm,
+    VTextField,
+    VTextarea
   },
   directives: {
     Ripple,
@@ -43,16 +61,16 @@ Vue.use(Vuetify, {
   },
   options: {
     minifyTheme(css) {
-      return css.replace(/[\s|\r\n|\r|\n]/g, '');
+      return css.replace(/[\s|\r\n|\r|\n]/g, "");
     }
   },
 
   theme: {
-    primary: '#1867C0',
-    secondary: '#F6914D',
-    info: '#2196F3',
-    warning: '#FB8C00',
-    error: '#FF5252',
-    success: '#4CAF50'
+    primary: "#1867C0",
+    secondary: "#F6914D",
+    info: "#2196F3",
+    warning: "#FB8C00",
+    error: "#FF5252",
+    success: "#4CAF50"
   }
 });
