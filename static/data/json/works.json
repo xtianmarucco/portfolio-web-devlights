@@ -17,10 +17,7 @@
         "/data/images/ch4.gif"
       ],
 
-      "desktop": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
-      ],
+      "desktop": ["/data/images/chscreen1.gif", "/data/images/chscreen2.gif"],
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
       "technologies": [
         "/data/images/footer/mongodb-logo.gif",
@@ -51,11 +48,9 @@
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
       ],
-      "desktop": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
-      ],
+      "desktop": ["/data/images/chscreenxs.gif", "/data/images/chscreenxs.gif"],
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+
       "technologies": [
         "/data/images/footer/mongodb-logo.gif",
         "/data/images/footer/jquery-logo.gif",

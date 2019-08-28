@@ -129,13 +129,20 @@
         </v-flex>
         <v-navigation-drawer v-model="drawer" app fixed temporary width="560px" right>
           <v-container>
-            <v-layout row wrap>
+            <v-layout row wrap width="100%">
+              <v-flex xs12>
+                <v-spacer></v-spacer>
+                <v-icon right id="close-icon" @click="drawer = !drawer" large mr-0>close</v-icon>
+              </v-flex>
+
+              <br />
               <v-flex xs12 text-xs-center align-center>
                 <v-form ref="form">
-                  <v-text-field v-model="form.name" label="Name" required></v-text-field>
+                  <v-text-field v-model="form.name" label="Name" required outline></v-text-field>
 
-                  <v-text-field v-model="form.email" label="Email" required></v-text-field>
-                  <v-textarea v-model="form.message" label="Message" required></v-textarea>
+                  <v-text-field v-model="form.email" label="Email" required outline></v-text-field>
+
+                  <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
 
                   <v-btn color="primary" :disabled="$v.$invalid">send message</v-btn>
                 </v-form>
@@ -240,34 +247,40 @@ export default {
   animation: none;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(69, 75, 153, 0.575);
-  }
-  70% {
-    -webkit-box-shadow: 0 0 0 10px rgba(70, 64, 149, 0.52);
-  }
-  100% {
-    -webkit-box-shadow: 8 8 8 8 rgba(68, 96, 149, 0.472);
-  }
-}
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-  }
-  70% {
-    -moz-box-shadow: 0 0 0 10px rgba(46, 59, 173, 0.561);
-    box-shadow: 0 0 0 10px rgba(83, 101, 143, 0.541);
-  }
-  100% {
-    -moz-box-shadow: 0 0 0 0 rgba(44, 87, 204, 0.513);
-    box-shadow: 0 0 0 0 rgba(100, 108, 185, 0.554);
-  }
-}
+// @-webkit-keyframes pulse {
+//   0% {
+//     -webkit-box-shadow: 0 0 0 0 rgba(69, 75, 153, 0.575);
+//   }
+//   70% {
+//     -webkit-box-shadow: 0 0 0 10px rgba(70, 64, 149, 0.52);
+//   }
+//   100% {
+//     -webkit-box-shadow: 8 8 8 8 rgba(68, 96, 149, 0.472);
+//   }
+// }
+// @keyframes pulse {
+//   0% {
+//     -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+//     box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+//   }
+//   70% {
+//     -moz-box-shadow: 0 0 0 10px rgba(46, 59, 173, 0.561);
+//     box-shadow: 0 0 0 10px rgba(83, 101, 143, 0.541);
+//   }
+//   100% {
+//     -moz-box-shadow: 0 0 0 0 rgba(44, 87, 204, 0.513);
+//     box-shadow: 0 0 0 0 rgba(100, 108, 185, 0.554);
+//   }
+// }
 
 h1 {
   text-shadow: 3px 5px 2px #474747;
   color: #ffffff;
+}
+
+#close-icon {
+  margin-left: 90%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 </style>
