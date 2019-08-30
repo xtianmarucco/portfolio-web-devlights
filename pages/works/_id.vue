@@ -21,6 +21,7 @@
     </v-toolbar>
 
     <v-img
+    v-if="work.client.urlImage"
       :src="work.client.urlImage"
       :aspect-ratio="16/9"
       class="img-client"
@@ -38,9 +39,23 @@
             <p
               class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
-          </v-flex>
+             <v-flex class="arrow-cont">
+             <img id="arrow-down" src="/data/images/sign-down.gif" alt="">
+             
+             </v-flex>
+             
+             </v-flex>
+          
+      
+
+         
+
+          
+           
         </v-layout>
+
       </v-container>
+      
     </v-img>
 
     <v-container>
@@ -71,7 +86,7 @@
       </v-container>
     </div>
 
-    <div>
+    <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
       <v-container grid-list-xl>
         <v-layout row class="grid-tech">
           <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
@@ -116,7 +131,7 @@
         </v-flex>
         <v-layout row class="grid-tech">
           <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
-            <img data-aos="fade-up" :src="item" alt />
+            <img  data-aos="fade-up" :src="item" alt />
           </v-flex>
         </v-layout>
       </v-layout>
@@ -283,4 +298,59 @@ h1 {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+// #arrow-down{
+// margin-top: -100PX;
+//   margin-bottom: -200px;
+  
+// }
+
+// rubber band animation
+
+@keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.arrow-cont{
+  margin-top: -100px;
+transform: scale(.2)
+}
+#arrow-down {
+  
+  animation: rubberBand 1.5s infinite;
+
+  
+}
+
 </style>
