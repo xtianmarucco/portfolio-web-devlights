@@ -37,18 +37,18 @@
     "_id": 2,
     "client": {
       "urlImage": "/data/images/clients/livetpug.gif",
-      "name": "crankbrothers"
+      "name": ""
     },
     "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content",
 
     "urlWork": "https://www.volcom.com/",
     "urlImages": {
-      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
+      "notebook": " ", 
       "mobile": [
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
       ],
-      "desktop": ["/data/images/chscreenxs.gif", "/data/images/chscreenxs.gif"],
+      "desktop": [""],
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
 
       "technologies": [
@@ -58,7 +58,6 @@
         "/data/images/footer/angular.gif",
         "/data/images/footer/reactletters.gif",
         "/data/images/footer/restify.gif",
-       
         "/data/images/footer/nodejs-logo.gif"
         
       ]

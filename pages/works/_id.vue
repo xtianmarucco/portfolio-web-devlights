@@ -39,10 +39,7 @@
             <p
               class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
-             <v-flex class="arrow-cont">
-             <img id="arrow-down" src="/data/images/sign-down.gif" alt="">
              
-             </v-flex>
              
              </v-flex>
           
@@ -76,6 +73,15 @@
       </v-layout>
     </v-container>
 
+    <div class="py-5" v-if="work.urlImages.notebook">
+      <v-container data-aos="zoom-in">
+        <v-layout row wrap>
+          <v-flex xs12>
+            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} notebook size image`"></v-img>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
@@ -129,7 +135,7 @@
           <div class="line grey darken-4 mx-auto my-3"></div>
           <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout row class="grid-tech">
+        <v-layout xs12 row class="grid-tech">
           <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
             <img  data-aos="fade-up" :src="item" alt />
           </v-flex>
