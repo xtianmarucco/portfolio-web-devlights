@@ -21,7 +21,7 @@
     </v-toolbar>
 
     <v-img
-    v-if="work.client.urlImage"
+      v-if="work.client.urlImage"
       :src="work.client.urlImage"
       :aspect-ratio="16/9"
       class="img-client"
@@ -39,23 +39,12 @@
             <p
               class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
-             
-             
-             </v-flex>
-          
-      
-
-         
-
-          
-           
+          </v-flex>
         </v-layout>
-
       </v-container>
-      
     </v-img>
 
-    <v-container>
+    <v-container v-if="work.urlWork && work.urlWork.lenght>0">
       <v-layout row wrap>
         <v-flex xs12 text-xs-center my-5>
           <h3 class="display-1 mb-2">{{work.about}}</h3>
@@ -72,21 +61,53 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!-- livet sections logo&views -->
+    <div>
+      <v-layout row wrap align-center justify-center>
+        <v-flex xs4 class="text-xs-center">
+          <v-img
+            absolute
+            width="50%"
+            class="mx-auto"
+            :src="work.urlImages.logoLivet"
+            :alt="`${work.client.logoLivet} `"
+          ></v-img>
 
-    <div class="py-5" v-if="work.urlImages.notebook">
-      <v-container data-aos="zoom-in">
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} notebook size image`"></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
+          <h2 class="mx-auto" xs6 md6>{{work.livetAboutTitle}}</h2>
+          <p class="mx-auto" xs6 md6>{{work.livetAboutText}}</p>
+        </v-flex>
+
+        <v-flex>
+          <v-img :src="work.urlImages.viewsMobile" :alt="`${work.client.viewsMobile} `"></v-img>
+        </v-flex>
+      </v-layout>
     </div>
+
+    <!-- livet sections text-->
+
+    <div style=" margin-top: 150px; ">
+      <v-layout text-xs-center align-center>
+        <v-flex xs3 class="text-xs-center">
+          <v-img :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
+        </v-flex>
+
+        <v-flex xs3 class="text-xs-center">
+          <v-img :src="work.urlImages.android" :alt="`${work.client.android} `"></v-img>
+        </v-flex>
+
+        <v-flex text-xs-center align-center>
+          <h2 class="mx-auto" xs4 md6>{{work.livetAboutTitle}}</h2>
+          <p class="mx-auto" xs4 md6>{{work.livetAboutText}}</p>
+        </v-flex>
+      </v-layout>
+    </div>
+
+    <!--  -->
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
           <v-flex xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} notebook size image`"></v-img>
+            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
           </v-flex>
         </v-layout>
       </v-container>
@@ -102,7 +123,7 @@
       </v-container>
     </div>
 
-    <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length">
+    <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
       <v-container>
         <v-layout row wrap>
           <v-flex
@@ -137,7 +158,7 @@
         </v-flex>
         <v-layout xs12 row class="grid-tech">
           <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
-            <img  data-aos="fade-up" :src="item" alt />
+            <img data-aos="fade-up" :src="item" alt />
           </v-flex>
         </v-layout>
       </v-layout>
@@ -307,7 +328,7 @@ h1 {
 // #arrow-down{
 // margin-top: -100PX;
 //   margin-bottom: -200px;
-  
+
 // }
 
 // rubber band animation
@@ -348,15 +369,4 @@ h1 {
     transform: scale3d(1, 1, 1);
   }
 }
-.arrow-cont{
-  margin-top: -100px;
-transform: scale(.2)
-}
-#arrow-down {
-  
-  animation: rubberBand 1.5s infinite;
-
-  
-}
-
 </style>
