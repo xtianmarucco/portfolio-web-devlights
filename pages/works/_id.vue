@@ -1,5 +1,5 @@
 <template>
-  <div v-if="work" class>
+  <div v-if="work" id="livetsection">
     <v-toolbar
       app
       height="80px"
@@ -62,9 +62,9 @@
       </v-layout>
     </v-container>
     <!-- livet sections logo&views -->
-    <div>
-      <v-layout row wrap align-center justify-center>
-        <v-flex xs4 class="text-xs-center">
+    <div id="livetsection1">
+      <v-layout row wrap align-center justify-center class="mt-15">
+        <v-flex data-aos="fade-right" xs12 md6 class="text-xs-center mt-10">
           <v-img
             absolute
             width="50%"
@@ -73,33 +73,48 @@
             :alt="`${work.client.logoLivet} `"
           ></v-img>
 
-          <h2 class="mx-auto" xs6 md6>{{work.livetAboutTitle}}</h2>
-          <p class="mx-auto" xs6 md6>{{work.livetAboutText}}</p>
+          <h1 class="livettext">{{work.livetAboutTitle}}</h1>
+
+          <h2 class="livettext" style="margin-top:25px;">{{work.livetAboutSub}}</h2>
         </v-flex>
 
-        <v-flex>
-          <v-img :src="work.urlImages.viewsMobile" :alt="`${work.client.viewsMobile} `"></v-img>
+        <v-flex md6 xs12>
+          <v-img
+            data-aos="fade-left"
+            :src="work.urlImages.viewsMobile"
+            :alt="`${work.client.viewsMobile} `"
+          ></v-img>
         </v-flex>
       </v-layout>
     </div>
 
     <!-- livet sections text-->
 
-    <div style=" margin-top: 150px; ">
-      <v-layout text-xs-center align-center>
-        <v-flex xs3 class="text-xs-center">
-          <v-img :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
-        </v-flex>
+    <div id="livetsection2" style=" margin-top: 150px; ">
+      <v-container>
+        <v-layout text-xs-center align-center row wrap>
+          <v-flex xs12 md3 class="text-xs-center">
+            <v-img data-aos="fade-up" :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
+          </v-flex>
 
-        <v-flex xs3 class="text-xs-center">
-          <v-img :src="work.urlImages.android" :alt="`${work.client.android} `"></v-img>
-        </v-flex>
+          <v-flex xs12 md3 class="text-xs-center">
+            <v-img
+              data-aos="fade-up"
+              :src="work.urlImages.android"
+              :alt="`${work.client.android} `"
+            ></v-img>
+          </v-flex>
 
-        <v-flex text-xs-center align-center>
-          <h2 class="mx-auto" xs4 md6>{{work.livetAboutTitle}}</h2>
-          <p class="mx-auto" xs4 md6>{{work.livetAboutText}}</p>
-        </v-flex>
-      </v-layout>
+          <v-flex xs12 md6 text-xs-center>
+            <h1 style="margin-top:-150px;" class="livettext">{{work.livetAboutTitle1}}</h1>
+            <div style="margin-top:25px;">
+              <h4 class="livettext">{{work.livetAboutTexta}}</h4>
+              <h4 class="livettext">{{work.livetAboutTextb}}</h4>
+              <h4 class="livettext">{{work.livetAboutTextc}}</h4>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </div>
 
     <!--  -->
@@ -156,7 +171,7 @@
           <div class="line grey darken-4 mx-auto my-3"></div>
           <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout xs12 row class="grid-tech">
+        <v-layout xs12 md12 row class="grid-tech">
           <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
             <img data-aos="fade-up" :src="item" alt />
           </v-flex>
@@ -275,7 +290,7 @@ export default {
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 // btn animation
@@ -368,5 +383,23 @@ h1 {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+}
+
+#livetsection {
+  background: rgb(218, 191, 216);
+  background: linear-gradient(0deg, #fbfbfb 0%, purple 100%);
+}
+
+.p {
+  font-size: 17px;
+  line-height: 25px;
+}
+
+h4 {
+  line-height: 25px;
+}
+
+.livettext {
+  color: #ffffff;
 }
 </style>

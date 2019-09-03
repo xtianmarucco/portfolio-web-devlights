@@ -38,12 +38,16 @@
       "urlImage": "/data/images/clients/livetpug.gif",
       "name": ""
     },
-    "livetAboutTitle": "About livet",
-    "livetAboutText": "la aplicación Livet te acerca la libreta veterinaria de todas tus mascotas de una manera rápida y fácil eso visto desde el lado del usuario dueño de las mascota",
+    "livetAboutTitle": "The easiest way to take care of your pets",
+    "livetAboutSub": "Because you care...",
+    "livetAboutTitle1": "About Livet",
+    "livetAboutTexta": "We built a set of tools for tracking medical history of your pet",
+    "livetAboutTextb": "Intituive and easy to use, acces to all your pet's information in the easiest and more convienient way   ",
+    "livetAboutTextc": "You can create as muany pet profiles as you wish and add information about your pets",
 
     "urlImages": {
-      "logoLivet": "/data/images/logo-livet.gif",
-      "viewsMobile": "/data/images/vistas.gif",
+      "logoLivet": "/data/images/logolivet.png",
+      "viewsMobile": "/data/images/vistas.png",
       "apple": "/data/images/Iphone6.png",
       "android": "/data/images/nexus_5x.png ",
       "notebook": " ",
