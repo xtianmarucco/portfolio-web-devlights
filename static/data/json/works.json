@@ -5,6 +5,7 @@
       "urlImage": "/data/images/chbanner.gif",
       "name": "CREATIVE HUMANS"
     },
+
     "about": "About Creative Humans",
     "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
     "story2": "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
@@ -37,6 +38,9 @@
     "client": {
       "urlImage": "/data/images/clients/livetpug.gif",
       "name": ""
+    },
+    "styles": {
+      "background": "linear-gradient(0deg, #fbfbfb 0%, purple 100%)"
     },
     "livetAboutTitle": "The easiest way to take care of your pets",
     "livetAboutSub": "Because you care...",

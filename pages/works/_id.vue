@@ -1,5 +1,5 @@
 <template>
-  <div v-if="work" id="livetsection">
+  <div v-if="work" :style="work.styles">
     <v-toolbar
       app
       height="80px"
@@ -19,7 +19,6 @@
         <v-icon>arrow_left</v-icon>PORTFOLIO
       </v-btn>
     </v-toolbar>
-
     <v-img
       v-if="work.client.urlImage"
       :src="work.client.urlImage"
@@ -27,7 +26,7 @@
       class="img-client"
       :alt="`${work.client.name} image`"
     >
-      <v-container fill-height>
+      <v-container fill-height class="scroll-y">
         <v-layout data-aos="fade-up" align-center :class="{ 'py-5': $vuetify.breakpoint.xs }">
           <v-flex
             xs12
@@ -35,10 +34,16 @@
             :class="{ 'ml-5': !$vuetify.breakpoint.xs, 'ml-2': $vuetify.breakpoint.xs }"
           >
             <h1 class="text-uppercase display-2 font-weight-bold white--text">{{ work.client.name }}</h1>
-            <div class="line white my-3 mx-auto"></div>
+            <div v-if="work" class="line white my-3 mx-auto"></div>
             <p
               class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
+
+            <v-layout row wrap width="100%" justify-center>
+              <v-btn fab light absolute id="scroll-down">
+                <i class="material-icons" light-primary>arrow_downward</i>
+              </v-btn>
+            </v-layout>
           </v-flex>
         </v-layout>
       </v-container>
@@ -106,8 +111,8 @@
           </v-flex>
 
           <v-flex xs12 md6 text-xs-center>
-            <h1 style="margin-top:-150px;" class="livettext">{{work.livetAboutTitle1}}</h1>
-            <div style="margin-top:25px;">
+            <h1 class="livettext">{{work.livetAboutTitle1}}</h1>
+            <div>
               <h4 class="livettext">{{work.livetAboutTexta}}</h4>
               <h4 class="livettext">{{work.livetAboutTextb}}</h4>
               <h4 class="livettext">{{work.livetAboutTextc}}</h4>
@@ -184,6 +189,15 @@
         <v-flex xs12 text-xs-center>
           <v-btn dark @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
         </v-flex>
+
+        <v-container>
+          <v-layout row wrap width="100%" right>
+            <v-btn fab dark color="red" id="btnScrollToTop" href="#top">
+              <i class="material-icons" light-primary>arrow_upward</i>
+            </v-btn>
+          </v-layout>
+        </v-container>
+
         <v-navigation-drawer v-model="drawer" app fixed temporary width="560px" right>
           <v-container>
             <v-layout row wrap width="100%">
@@ -224,10 +238,18 @@
 
 
 <script>
+// const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+// btnScrollToTop.addEventListener("click", function() {
+//   window.scrollTo(0, 0);
+// });
+
 import { mapGetters, mapActions } from "vuex";
 import { required, email } from "vuelidate/lib/validators";
 export default {
   layout: "empty",
+
+  name: "WorkDetail",
 
   data() {
     return {
@@ -294,14 +316,32 @@ export default {
 }
 
 // btn animation
-.pulse {
-  background: #545a68;
-  cursor: pointer;
-  box-shadow: 5 5 5 rgba(36, 36, 37, 0.4);
-  animation: pulse 2s infinite;
+@keyframes grow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(red, 0.3), 0 0 0 1em rgba(red, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 0 1em rgba(red, 0.3), 0 0 0 1em rgba(red, 0.3);
+  }
 }
-.pulse:hover {
-  animation: none;
+
+#btnScrollToTop {
+  animation: grow 1.2s infinite;
+}
+
+@keyframes growb {
+  0% {
+    box-shadow: 0 0 0 0 rgba(white, 0.3), 0 0 0 1em rgba(white, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 0 1em rgba(white, 0.3), 0 0 0 1em rgba(white, 0.3);
+  }
+}
+
+#scroll-down {
+  animation: growb 1.2s infinite;
 }
 
 // @-webkit-keyframes pulse {
@@ -347,48 +387,6 @@ h1 {
 // }
 
 // rubber band animation
-
-@keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-#livetsection {
-  background: rgb(218, 191, 216);
-  background: linear-gradient(0deg, #fbfbfb 0%, purple 100%);
-}
 
 .p {
   font-size: 17px;

@@ -78,6 +78,7 @@ module.exports = {
     "~/plugins/vue-components",
     "~/plugins/vuetify",
     { ssr: false, src: "~/plugins/vuelidate" },
+    { ssr: false, src: "~/plugins/smooth-scroll" }, //that how yo force nuxt to install the galery
     { ssr: false, src: "~/plugins/aos" } //that how yo force nuxt to install the galery
   ],
   /*

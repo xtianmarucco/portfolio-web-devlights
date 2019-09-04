@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="top">
     <slot></slot>
   </v-app>
 </template>
