@@ -38,8 +38,8 @@
   {
     "_id": 2,
     "client": {
-      "urlImage": "/data/images/clients/livet.gif",
-      "name": ""
+      "urlImage": "/data/images/clients/livetpug.gif",
+      "name": "Livet App"
     },
     "styles": {
       "background": "linear-gradient(0deg, #fbfbfb 0%, purple 100%)"
@@ -71,47 +71,24 @@
         "/data/images/footer/nodejs-logo.gif"
       ]
     },
-    "services": []
+    "services": [
+      "SHOPIFY INTEGRATION",
+      "MULTIPLE INTERNATIONAL STORES",
+      "SHOPIFY PLUS BUILD"
+    ]
   },
   {
     "_id": 3,
     "client": {
-      "urlImage": "/data/images/clients/sas.gif",
-      "name": " ",
-      "tra1": "Set apointments, request information, and schedule turns",
-      "tra2": "Check the list of companies authorised by IGJ , get information about requierements, fees, requirements and how to present claims",
-      "tra3": "Assesment, annual obligations, regulations and legal frameworks",
-      "tra4": "Set apointments, request information, and and schedule turns"
+      "urlImage": "/data/images/clients/sas.svg",
+      "name": "   SAS  ",
+      "name3": "SAS"
     },
     "styles": {
-      "background": "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(4,139,9,1) 100%)"
+      "background": "linear-gradient(0deg, rgba(246,246,246,1) 0%, rgba(4,139,9,1) 100%)"
     },
-    "urlWork": "https://igpj.corrientes.gob.ar",
-    "urlImages": {
-      "notebook": "./../../data/images/clients/chlaptop.png",
-      "mobileSas": [
-        "/data/images/sasiphone.svg"
-      ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
-      "technologies": [
-        "/data/images/footer/react.svg",
-        "/data/images/footer/php-1.svg",
-        "/data/images/footer/bootstrap-4.svg",
-        "/data/images/footer/laravel-1.svg"
-      ]
-    },
-    "services": [
-      "Platform to speed up company registration as SAS (simplified action societies)"
-    ]
-  },
-  {
-    "_id": 4,
-    "client": {
-      "urlImage": "/data/images/clients/ceo.gif",
-      "name": " "
-    },
-    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
-    "urlWork": "https://igpj.corrientes.gob.ar",
+    "story": "Platform to speed up company registration as SAS (simplified action society)",
+    "urlWork": "https://igpj.corrientes.gob.ar/",
     "urlImages": {
       "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
       "mobile": [
@@ -126,12 +103,43 @@
       "technologies": [
         "/data/images/footer/bootstrap-4.svg",
         "/data/images/footer/php-1.svg",
-        "/data/images/footer/laravel-1.svg",
-        "/data/images/footer/react.svg"
+        "/data/images/footer/react.svg",
+        "/data/images/footer/laravel-1.svg"
       ]
     },
     "services": [
-      " "
+      "Platform to speed up company registration as SAS (simpliﬁed action societies)"
+    ]
+  },
+  {
+    "_id": 4,
+    "client": {
+      "urlImage": "/data/images/clients/Apt2B.jpg",
+      "name": "Apt2B"
+    },
+    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
+    "urlWork": "https://www.volcom.com/",
+    "urlImages": {
+      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
+      "mobile": [
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
+      ],
+      "desktop": [
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
+      ],
+      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "technologies": [
+        "/data/images/footer/mongodb-logo.gif",
+        "/data/images/footer/html-logo.gif",
+        "/data/images/footer/pug-logo.gif"
+      ]
+    },
+    "services": [
+      "SHOPIFY INTEGRATION",
+      "MULTIPLE INTERNATIONAL STORES",
+      "SHOPIFY PLUS BUILD"
     ]
   },
   {
@@ -145,8 +153,8 @@
     "urlImages": {
       "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
       "mobile": [
-        "/data/images/sasmobile1.svg",
-        "/data/images/sasmobile2.svg"
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
+        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
       ],
       "desktop": [
         "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",

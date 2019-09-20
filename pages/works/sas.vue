@@ -28,20 +28,49 @@
     >
       <v-container fill-height class="scroll-y">
         <v-layout
-          align-center
-          justify-end
-          fill-heigh
-          xs12
-          md8
-          md6
           data-aos="fade-up"
+          justify-end
+          row
+          fill-height
           :class="{ 'py-5': $vuetify.breakpoint.xs }"
         >
           <v-flex
+            md8
+            xs12
             text-xs-center
             :class="{ 'ml-5': !$vuetify.breakpoint.xs, 'ml-2': $vuetify.breakpoint.xs }"
           >
-            <h1 class="text-uppercase display-2 font-weight-bold white--text">{{ work.client.name }}</h1>
+            <h1
+              class="text-uppercase display-2 font-weight-bold white--text"
+            >{{ work.client.name3 }}</h1>
+            <div v-if="work" class="line white my-3 mx-auto"></div>
+            <p
+              class="text-uppercase title font-weight-medium white--text"
+            >{{ work.services.toString() }}</p>
+
+            <v-layout row wrap width="100%" justify-center>
+              <v-btn fab light absolute id="scroll-down">
+                <i class="material-icons" light-primary>arrow_downward</i>
+              </v-btn>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+        <v-layout
+          data-aos="fade-up"
+          justify-end
+          row
+          fill-height
+          :class="{ 'py-5': $vuetify.breakpoint.xs }"
+        >
+          <v-flex
+            md8
+            xs12
+            text-xs-center
+            :class="{ 'ml-5': !$vuetify.breakpoint.xs, 'ml-2': $vuetify.breakpoint.xs }"
+          >
+            <h1
+              class="text-uppercase display-2 font-weight-bold white--text"
+            >{{ work.client.name3 }}</h1>
             <div v-if="work" class="line white my-3 mx-auto"></div>
             <p
               class="text-uppercase title font-weight-medium white--text"
@@ -57,166 +86,25 @@
       </v-container>
     </v-img>
 
-    <v-container>
-      <v-layout row wrap>
-        <v-flex xs12 text-xs-center my-5>
-          <v-btn
-            class="pulse"
-            depressed
-            color="grey darken-3"
-            target="_blank"
-            dark
-            :href="work.urlWork"
-          >CHECK IT OUT</v-btn>
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <!-- livet sections logo&views -->
-    <div id="livetsection1">
-      <v-layout row wrap align-center justify-center class="mt-15">
-        <v-flex data-aos="fade-right" xs12 md6 class="text-xs-center mt-10">
-          <v-img
-            absolute
-            width="50%"
-            class="mx-auto"
-            :src="work.urlImages.logoLivet"
-            :alt="`${work.client.logoLivet} `"
-          ></v-img>
-
-          <h1 class="livettext">{{work.livetAboutTitle}}</h1>
-
-          <h2 class="livettext" style="margin-top:25px;">{{work.livetAboutSub}}</h2>
-        </v-flex>
-
-        <v-flex md6 xs12>
-          <v-img
-            data-aos="fade-left"
-            :src="work.urlImages.viewsMobile"
-            :alt="`${work.client.viewsMobile} `"
-          ></v-img>
-        </v-flex>
-      </v-layout>
-    </div>
-
     <!-- livet sections text-->
 
-    <div id="livetsection2" style=" margin-top: 150px; ">
-      <v-container>
-        <v-layout text-xs-center align-center row wrap>
-          <v-flex xs12 md3 class="text-xs-center">
-            <v-img data-aos="fade-up" :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
-          </v-flex>
-
-          <v-flex xs12 md3 class="text-xs-center">
-            <v-img
-              data-aos="fade-up"
-              :src="work.urlImages.android"
-              :alt="`${work.client.android} `"
-            ></v-img>
-          </v-flex>
-
-          <v-flex xs12 md6 text-xs-center>
-            <h1 class="livettext">{{work.livetAboutTitle1}}</h1>
-            <div>
-              <h4 class="livettext">{{work.livetAboutTexta}}</h4>
-              <h4 class="livettext">{{work.livetAboutTextb}}</h4>
-              <h4 class="livettext">{{work.livetAboutTextc}}</h4>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
     <!--  -->
-    <div class="py-5" v-if="work.urlImages.notebook">
-      <v-container data-aos="zoom-in">
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
 
-    <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
-      <v-container grid-list-xl>
-        <v-layout row class="grid-tech">
-          <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
-            <img data-aos="flip-right" :src="item" alt />
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
-      <v-container>
-        <v-layout row wrap>
-          <v-flex
-            xs12
-            md6
-            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
-            :key="imgDesktop"
-          >
-            <v-img
-              :src="imgDesktop"
-              class="mx-2"
-              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
-            ></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-    <!-- sas mobile  -->
-
-    <div v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length > 0">
-      <v-container grid-list-xl>
-        <v-layout>
-          <v-flex xs12 md6 justify-self-center v-for="item in work.urlImages.mobileSas" :key="item">
-            <img data-aos="flip-right" :src="item" alt />
-          </v-flex>
-
-          <v-layout align-center justify-center row fill-height>
-            <v-flex xs12 md6 class="text-xs-center">
-              <v-icon large text-xs-center>computer</v-icon>
-
-              <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
-
-              <p text-xs-center>{{ work.client.tra1 }}</p>
-
-              <v-icon large text-xs-center>supervised_user_circle</v-icon>
-              <h2 text-xs-center>More benefits for users</h2>
-              <p text-xs-center>{{ work.client.tra2 }}</p>
-
-              <v-icon large text-xs-center>info</v-icon>
-              <h2 text-xs-center>Important information for Civil entities just a click away</h2>
-              <p>{{ work.client.tra3 }}</p>
-
-              <v-icon large text-xs-center>thumb_up</v-icon>
-              <h2 text-xs-center>Useful information</h2>
-              <p text-xs-center>{{ work.client.tra3 }}</p>
-
-              <v-icon large text-xs-center>thumb_up</v-icon>
-              <h2 text-xs-center>Useful information</h2>
-              <p text-xs-center>{{ work.client.tra3 }}</p>
-            </v-flex>
-            <v-flex></v-flex>
-            <v-flex></v-flex>
-          </v-layout>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <!--  -->
     <v-container>
       <v-layout row wrap my-5>
-        <v-flex xs12 text-xs-center>
-          <h2>TECHNOLOGIES USED IN THIS PROJECT</h2>
+        <v-flex xs12 md6 text-xs-center>
+          <h4 class="display-1 font-weight-thin">TECHNOLOGIES USED IN THIS PROJECT</h4>
           <div class="line grey darken-4 mx-auto my-3"></div>
           <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout xs12 md12 row class="grid-tech" style="margin-top:100px;">
-          <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
-            <img height="200px" width="300px" data-aos="fade-up" :src="item" alt />
+        <v-layout xs12 md12 row class="grid-tech">
+          <v-flex
+            style="width:200px;"
+            justify-self-center
+            v-for="item in work.urlImages.technologies"
+            :key="item"
+          >
+            <img data-aos="fade-up" :src="item" alt />
           </v-flex>
         </v-layout>
       </v-layout>
