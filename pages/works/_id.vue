@@ -71,10 +71,42 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!-- ceo section  -->
+    <div>
+      <v-container>
+        <v-layout row wrap align-center justify-center>
+          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+            <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
+            <v-flex v-for="item in work.urlImages.ceoImg1" :key="item">
+              <img :src="item" alt />
+            </v-flex>
+          </v-flex>
+          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+            <h2 text-xs-center>{{ work.client.txtCeo2 }}</h2>
+            <v-flex v-for="item in work.urlImages.ceoImg2" :key="item">
+              <img :src="item" alt />
+            </v-flex>
+          </v-flex>
+          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+            <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
+            <v-flex v-for="item in work.urlImages.ceoImg3" :key="item">
+              <img :src="item" alt />
+            </v-flex>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+
     <!-- livet sections logo&views -->
     <div id="livetsection1">
       <v-layout row wrap align-center justify-center class="mt-15">
-        <v-flex data-aos="fade-right" xs12 md6 class="text-xs-center mt-10">
+        <v-flex
+          style="margin-top:-350;"
+          data-aos="fade-right"
+          xs12
+          md6
+          class="text-xs-center mt-10"
+        >
           <v-img
             absolute
             width="50%"
@@ -128,7 +160,7 @@
     </div>
 
     <!--  -->
-    <div class="py-5" v-if="work.urlImages.notebook">
+    <div style="margin-top:-400px;" class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
           <v-flex xs12>
@@ -166,42 +198,37 @@
         </v-layout>
       </v-container>
     </div>
-    <!-- sas mobile  -->
 
-    <div v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length > 0">
+    <!-- sas mobile  -->
+    <div v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length> 0">
       <v-container grid-list-xl>
-        <v-layout>
-          <v-flex xs12 md6 justify-self-center v-for="item in work.urlImages.mobileSas" :key="item">
-            <img data-aos="flip-right" :src="item" alt />
+        <v-layout row wrap>
+          <v-flex v-for="item in work.urlImages.mobileSas" :key="item">
+            <img :src="item" alt />
           </v-flex>
 
-          <v-layout align-center justify-center row fill-height>
-            <v-flex xs12 md6 class="text-xs-center">
-              <v-icon large text-xs-center>computer</v-icon>
+          <v-flex md6 xs12 align-center justify-self-center class="text-xs-center">
+            <!-- <v-flex v-for="item in work.urlImages.logoSas" :key="item">
+              <img :src="item" alt />
+            </v-flex>-->
+            <v-icon large text-xs-center>computer</v-icon>
 
-              <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
+            <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
 
-              <p text-xs-center>{{ work.client.tra1 }}</p>
+            <p text-xs-center>{{ work.client.tra1 }}</p>
 
-              <v-icon large text-xs-center>supervised_user_circle</v-icon>
-              <h2 text-xs-center>More benefits for users</h2>
-              <p text-xs-center>{{ work.client.tra2 }}</p>
+            <v-icon large text-xs-center>supervised_user_circle</v-icon>
+            <h2 text-xs-center>More benefits for users</h2>
+            <p text-xs-center>{{ work.client.tra2 }}</p>
 
-              <v-icon large text-xs-center>info</v-icon>
-              <h2 text-xs-center>Important information for Civil entities just a click away</h2>
-              <p>{{ work.client.tra3 }}</p>
+            <v-icon large text-xs-center>info</v-icon>
+            <h2 text-xs-center>Important information for Civil entities just a click away</h2>
+            <p>{{ work.client.tra3 }}</p>
 
-              <v-icon large text-xs-center>thumb_up</v-icon>
-              <h2 text-xs-center>Useful information</h2>
-              <p text-xs-center>{{ work.client.tra3 }}</p>
-
-              <v-icon large text-xs-center>thumb_up</v-icon>
-              <h2 text-xs-center>Useful information</h2>
-              <p text-xs-center>{{ work.client.tra3 }}</p>
-            </v-flex>
-            <v-flex></v-flex>
-            <v-flex></v-flex>
-          </v-layout>
+            <v-icon large text-xs-center>thumb_up</v-icon>
+            <h2 text-xs-center>Useful information</h2>
+            <p text-xs-center>{{ work.client.tra3 }}</p>
+          </v-flex>
         </v-layout>
       </v-container>
     </div>
@@ -214,7 +241,7 @@
           <div class="line grey darken-4 mx-auto my-3"></div>
           <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout xs12 md12 row class="grid-tech" style="margin-top:100px;">
+        <v-layout row wrap class="grid-tech" style="margin-top:100px;">
           <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
             <img height="200px" width="300px" data-aos="fade-up" :src="item" alt />
           </v-flex>
@@ -409,7 +436,6 @@ export default {
 // }
 
 h1 {
-  text-shadow: 3px 5px 2px #474747;
   color: #ffffff;
 }
 

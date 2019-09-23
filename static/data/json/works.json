@@ -88,7 +88,8 @@
     },
     "urlWork": "https://igpj.corrientes.gob.ar",
     "urlImages": {
-      "notebook": "./../../data/images/clients/chlaptop.png",
+      "notebook": "/data/images/laptopsas.gif",
+      "logoSas": "/data/images/saslogo.gif",
       "mobileSas": [
         "/data/images/sasiphone.svg"
       ],
@@ -101,33 +102,33 @@
       ]
     },
     "services": [
-      "Platform to speed up company registration as SAS (simplified action societies)"
+      " "
     ]
   },
   {
     "_id": 4,
     "client": {
       "urlImage": "/data/images/clients/ceo.gif",
-      "name": " "
+      "name": " ",
+      "txtCeo1": "Sales management",
+      "txtCeo2": "Stock control",
+      "txtCeo3": "Electronic Invoicing"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://igpj.corrientes.gob.ar",
     "urlImages": {
-      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
-      "mobile": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
-      ],
+      "ceoImg1": "/data/images/einvoice.gif",
+      "ceoImg2": "/data/images/stockmgn.png",
+      "ceoImg3": "/data/images/payment.gif",
       "desktop": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
+        "/data/images/ceo1.png",
+        "/data/images/ceo2.png"
       ],
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
       "technologies": [
-        "/data/images/footer/bootstrap-4.svg",
-        "/data/images/footer/php-1.svg",
-        "/data/images/footer/laravel-1.svg",
-        "/data/images/footer/react.svg"
+        "/data/images/footer/angular.gif",
+        "/data/images/footer/aspnet.svg",
+        "/data/images/footer/sql-server.svg"
       ]
     },
     "services": [
