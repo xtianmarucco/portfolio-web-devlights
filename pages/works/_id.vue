@@ -71,27 +71,67 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!-- ocio section  -->
+
+    <div>
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex
+            data-aos="fade-right"
+            md6
+            xs12
+            align-center
+            justify-self-center
+            class="text-xs-center"
+          >
+            <img :src="work.urlImages.ocioShots" alt />
+
+            <v-layout row wrap class="grid-tech" style="margin-top:100px;">
+              <v-flex
+                ml-20
+                mr-20
+                justify-self-center
+                v-for="item in work.urlImages.download"
+                :key="item"
+              >
+                <img style="width:60%; margin-top:-80px;" :src="item" alt />
+              </v-flex>
+            </v-layout>
+          </v-flex>
+
+          <v-flex
+            data-aos="fade-left"
+            md6
+            xs12
+            align-center
+            justify-self-center
+            class="text-xs-center"
+          >
+            <v-flex>
+              <img :src="work.urlImages.ocioLogo" alt />
+            </v-flex>
+            <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
+            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
+            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h2>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
     <!-- ceo section  -->
     <div>
       <v-container>
         <v-layout row wrap align-center justify-center>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
             <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
-            <v-flex v-for="item in work.urlImages.ceoImg1" :key="item">
-              <img :src="item" alt />
-            </v-flex>
+            <img :src="work.urlImages.ceoImg1" alt />
           </v-flex>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-            <h2 text-xs-center>{{ work.client.txtCeo2 }}</h2>
-            <v-flex v-for="item in work.urlImages.ceoImg2" :key="item">
-              <img :src="item" alt />
-            </v-flex>
+            <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
+            <img :src="work.urlImages.ceoImg2" alt />
           </v-flex>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
             <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
-            <v-flex v-for="item in work.urlImages.ceoImg3" :key="item">
-              <img :src="item" alt />
-            </v-flex>
+            <img :src="work.urlImages.ceoImg3" alt />
           </v-flex>
         </v-layout>
       </v-container>
@@ -208,9 +248,10 @@
           </v-flex>
 
           <v-flex md6 xs12 align-center justify-self-center class="text-xs-center">
-            <!-- <v-flex v-for="item in work.urlImages.logoSas" :key="item">
-              <img :src="item" alt />
-            </v-flex>-->
+            <v-flex>
+              <img :src="work.urlImages.logoSas" alt />
+            </v-flex>
+
             <v-icon large text-xs-center>computer</v-icon>
 
             <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
@@ -233,7 +274,7 @@
       </v-container>
     </div>
 
-    <!--  -->
+    <!-- technologies -->
     <v-container>
       <v-layout row wrap my-5>
         <v-flex xs12 text-xs-center>

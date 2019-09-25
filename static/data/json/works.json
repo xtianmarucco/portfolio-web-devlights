@@ -117,7 +117,7 @@
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://igpj.corrientes.gob.ar",
     "urlImages": {
-      "ceoImg1": "/data/images/einvoice.gif",
+      "ceoImg1": "/data/images/invoice.gif",
       "ceoImg2": "/data/images/stockmgn.png",
       "ceoImg3": "/data/images/payment.gif",
       "desktop": [
@@ -138,32 +138,30 @@
   {
     "_id": 5,
     "client": {
-      "urlImage": "/data/images/clients/The Hundreds.jpg",
-      "name": "The Hundreds"
+      "urlImage": "/data/images/clients/ocio.gif",
+      "name": "Tiempo de Ocio",
+      "txtOcio1": "Get and share information about social events, places of interest and more.",
+      "txtOcio2": "Look for events and fun places around Chaco and Corrientes.",
+      "txtOcio3": "All information about the coolest places to hangout right at your fingertips."
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://www.volcom.com/",
     "urlImages": {
-      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
-      "mobile": [
-        "/data/images/sasmobile1.svg",
-        "/data/images/sasmobile2.svg"
-      ],
-      "desktop": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
-      ],
+      "ocioShots": "/data/images/img-phones.gif",
+      "ocioLogo": "/data/images/logoHeader.png",
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
       "technologies": [
-        "/data/images/footer/jquery-logo.gif",
-        "/data/images/footer/nodejs-logo.gif",
-        "/data/images/footer/pug-logo.gif"
+        "/data/images/microsoft-sql-server.svg",
+        "/data/images/footer/reactletters.gif",
+        "/data/images/footer/microsoft.net"
+      ],
+      "download": [
+        "/data/images/playstore.gif",
+        "/data/images/appstore.gif"
       ]
     },
     "services": [
-      "SHOPIFY INTEGRATION",
-      "MULTIPLE INTERNATIONAL STORES",
-      "SHOPIFY PLUS BUILD"
+      "FIND THE COOLEST PLACES AND LATEST CULTURAL EVENTS IN YOUR AREA"
     ]
   },
   {
