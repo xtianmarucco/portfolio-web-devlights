@@ -167,32 +167,24 @@
   {
     "_id": 6,
     "client": {
-      "urlImage": "/data/images/clients/Enjoy Life Foods.jpg",
-      "name": "Enjoy Life Foods"
+      "urlImage": "/data/images/clients/box.gif",
+      "txtBox1": "Get and share information about social events, places of interest and more.",
+      "txtBox2": "Look for events and fun places around Chaco and Corrientes.",
+      "txtBox3": "All information about the coolest places to hangout right at your fingertips."
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://www.volcom/",
     "urlImages": {
-      "notebook": "https://www.lucidfusion.com/images/uploads/projects/Volcom_Laptop_2.png",
-      "mobile": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3a.png",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_Cellphone_3b.png"
-      ],
-      "desktop": [
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5a.jpg",
-        "https://www.lucidfusion.com/images/uploads/projects/Volcom_5b.jpg"
-      ],
-      "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
+      "boxLogo": "/data/images/boxlogo.gif",
+      "boxMobile": "/data/images/boxmobile.gif",
+      "boxViews1": "/data/images/boxscreen1.gif",
+      "boxViews2": "/data/images/boxscreen2.gif",
       "technologies": [
         "/data/images/footer/mongodb-logo.gif",
         "/data/images/footer/html-logo.gif",
         "/data/images/footer/css-logo.gif"
       ]
     },
-    "services": [
-      "SHOPIFY INTEGRATION",
-      "MULTIPLE INTERNATIONAL STORES",
-      "SHOPIFY PLUS BUILD"
-    ]
+    "services": []
   }
 ]

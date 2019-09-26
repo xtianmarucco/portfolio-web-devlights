@@ -63,7 +63,7 @@
           <v-btn
             class="pulse"
             depressed
-            color="grey darken-3"
+            color="primary"
             target="_blank"
             dark
             :href="work.urlWork"
@@ -71,6 +71,41 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!-- box section  -->
+
+    <div>
+      <v-container>
+        <v-layout row wrap class="grid-tech">
+          <v-flex
+            data-aos="fade-right"
+            md6
+            xs12
+            align-center
+            justify-self-center
+            class="text-xs-center"
+          >
+            <img :src="work.urlImages.boxLogo" />
+
+            <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
+            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
+            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
+          </v-flex>
+
+          <v-flex data-aos="fade-left" md6 xs12>
+            <img align-center justify-self-center :src="work.urlImages.boxMobile" alt />
+          </v-flex>
+        </v-layout>
+
+        <v-layout row wrap>
+          <v-flex data-aos="fade-right" xs12>
+            <img align-center justify-self-center :src="work.urlImages.boxViews1" />
+
+            <img align-center justify-self-center :src="work.urlImages.boxViews2" />
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+
     <!-- ocio section  -->
 
     <div>
@@ -88,8 +123,7 @@
 
             <v-layout row wrap class="grid-tech" style="margin-top:100px;">
               <v-flex
-                ml-20
-                mr-20
+                align-content-space-around
                 justify-self-center
                 v-for="item in work.urlImages.download"
                 :key="item"
@@ -283,8 +317,22 @@
           <!-- SEPARADOR  -->
         </v-flex>
         <v-layout row wrap class="grid-tech" style="margin-top:100px;">
-          <v-flex justify-self-center v-for="item in work.urlImages.technologies" :key="item">
-            <img height="200px" width="300px" data-aos="fade-up" :src="item" alt />
+          <v-flex
+            md12
+            xs12
+            justify-self-center
+            v-for="item in work.urlImages.technologies"
+            :key="item"
+          >
+            <img
+              align-center
+              justify-self-center
+              height="200px"
+              width="300px"
+              data-aos="fade-up"
+              :src="item"
+              alt
+            />
           </v-flex>
         </v-layout>
       </v-layout>
@@ -293,12 +341,24 @@
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 text-xs-center>
-          <v-btn dark @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+          <v-btn color="accent" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
         </v-flex>
+        <!-- next and previous -->
 
+        <v-layout row wrap width="100%" right>
+          <v-btn rounded dark color="orange" id href>
+            <i class="material-icons" light-primary>keyboard_arrow_left</i>
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn rounded dark color="green" id href>
+            <i class="material-icons" light-primary>keyboard_arrow_right</i>
+          </v-btn>
+        </v-layout>
+
+        <!-- next and previous -->
         <v-container>
           <v-layout row wrap width="100%" right>
-            <v-btn fab dark color="red" id="btnScrollToTop" href="#top">
+            <v-btn fab dark color="blue" id="btnScrollToTop" href="#top">
               <i class="material-icons" light-primary>arrow_upward</i>
             </v-btn>
           </v-layout>
@@ -422,15 +482,6 @@ export default {
 }
 
 // btn animation
-@keyframes grow {
-  0% {
-    box-shadow: 0 0 0 0 rgba(red, 0.3), 0 0 0 1em rgba(red, 0.3);
-  }
-
-  100% {
-    box-shadow: 0 0 0 1em rgba(red, 0.3), 0 0 0 1em rgba(red, 0.3);
-  }
-}
 
 #btnScrollToTop {
   animation: grow 1.2s infinite;
