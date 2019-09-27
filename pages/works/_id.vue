@@ -15,7 +15,7 @@
     >
       <logo />
       <v-spacer></v-spacer>
-      <v-btn to="/">
+      <v-btn round to="/">
         <v-icon>arrow_left</v-icon>PORTFOLIO
       </v-btn>
     </v-toolbar>
@@ -61,9 +61,10 @@
       <v-layout row wrap>
         <v-flex xs12 text-xs-center my-5>
           <v-btn
+            round
             class="pulse"
             depressed
-            color="primary"
+            color="#FF9800"
             target="_blank"
             dark
             :href="work.urlWork"
@@ -75,7 +76,7 @@
 
     <div>
       <v-container>
-        <v-layout row wrap class="grid-tech">
+        <v-layout row wrap>
           <v-flex
             data-aos="fade-right"
             md6
@@ -84,7 +85,7 @@
             justify-self-center
             class="text-xs-center"
           >
-            <img :src="work.urlImages.boxLogo" />
+            <v-img :src="work.urlImages.boxLogo" />
 
             <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
@@ -92,17 +93,26 @@
           </v-flex>
 
           <v-flex data-aos="fade-left" md6 xs12>
-            <img align-center justify-self-center :src="work.urlImages.boxMobile" alt />
+            <v-img
+              style="heigth:250px;"
+              align-center
+              justify-self-center
+              :src="work.urlImages.boxMobile"
+              alt
+            />
           </v-flex>
         </v-layout>
+        <v-container>
+          <v-layout row wrap>
+            <v-flex data-aos="fade-right" md6 xs12>
+              <v-img :src="work.urlImages.boxViews1" />
+            </v-flex>
 
-        <v-layout row wrap>
-          <v-flex data-aos="fade-right" xs12>
-            <img align-center justify-self-center :src="work.urlImages.boxViews1" />
-
-            <img align-center justify-self-center :src="work.urlImages.boxViews2" />
-          </v-flex>
-        </v-layout>
+            <v-flex>
+              <v-img :src="work.urlImages.boxViews1" />
+            </v-flex>
+          </v-layout>
+        </v-container>
       </v-container>
     </div>
 
@@ -119,7 +129,7 @@
             justify-self-center
             class="text-xs-center"
           >
-            <img :src="work.urlImages.ocioShots" alt />
+            <v-img :src="work.urlImages.ocioShots" alt />
 
             <v-layout row wrap class="grid-tech" style="margin-top:100px;">
               <v-flex
@@ -128,7 +138,7 @@
                 v-for="item in work.urlImages.download"
                 :key="item"
               >
-                <img style="width:60%; margin-top:-80px;" :src="item" alt />
+                <v-img style="width:60%; margin-top:-80px;" :src="item" alt />
               </v-flex>
             </v-layout>
           </v-flex>
@@ -142,7 +152,7 @@
             class="text-xs-center"
           >
             <v-flex>
-              <img :src="work.urlImages.ocioLogo" alt />
+              <v-img :src="work.urlImages.ocioLogo" alt />
             </v-flex>
             <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
@@ -157,15 +167,15 @@
         <v-layout row wrap align-center justify-center>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
             <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
-            <img :src="work.urlImages.ceoImg1" alt />
+            <v-img :src="work.urlImages.ceoImg1" alt />
           </v-flex>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
             <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
-            <img :src="work.urlImages.ceoImg2" alt />
+            <v-img :src="work.urlImages.ceoImg2" alt />
           </v-flex>
           <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
             <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
-            <img :src="work.urlImages.ceoImg3" alt />
+            <v-img :src="work.urlImages.ceoImg3" alt />
           </v-flex>
         </v-layout>
       </v-container>
@@ -341,16 +351,16 @@
     <v-container>
       <v-layout row wrap>
         <v-flex xs12 text-xs-center>
-          <v-btn color="accent" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+          <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
         </v-flex>
         <!-- next and previous -->
 
         <v-layout row wrap width="100%" right>
-          <v-btn rounded dark color="orange" id href>
+          <v-btn round dark color="orange" id href>
             <i class="material-icons" light-primary>keyboard_arrow_left</i>
           </v-btn>
           <v-spacer></v-spacer>
-          <v-btn rounded dark color="green" id href>
+          <v-btn round dark color="green" id href>
             <i class="material-icons" light-primary>keyboard_arrow_right</i>
           </v-btn>
         </v-layout>
@@ -381,7 +391,7 @@
 
                   <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
 
-                  <v-btn color="primary" :disabled="$v.$invalid">send message</v-btn>
+                  <v-btn round color="primary" :disabled="$v.$invalid">send message</v-btn>
                 </v-form>
               </v-flex>
             </v-layout>
