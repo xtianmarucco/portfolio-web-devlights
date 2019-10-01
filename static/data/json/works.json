@@ -137,27 +137,29 @@
   },
   {
     "_id": 5,
+    "styles": {
+      "background": "background-color: white;"
+    },
     "client": {
       "urlImage": "/data/images/clients/ocio.gif",
       "name": "Tiempo de Ocio",
       "txtOcio1": "Get and share information about social events, places of interest and more.",
       "txtOcio2": "Look for events and fun places around Chaco and Corrientes.",
-      "txtOcio3": "All information about the coolest places to hangout right at your fingertips."
+      "txtOcio3": "All information about the coolest places to hangout right at your fingertips.",
+      "txtOcio4": "Available in all platforms."
     },
-    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
-    "urlWork": "https://www.volcom.com/",
     "urlImages": {
+      "ocioDownload1": "/data/images/appstore2.gif",
+      "ocioDownload2": "/data/images/playstore2.gif",
+      "ocioScreen1": "/data/images/ocioscreen1.gif",
+      "ocioScreen2": "/data/images/ocioscreen2.gif",
       "ocioShots": "/data/images/img-phones.gif",
       "ocioLogo": "/data/images/logoHeader.png",
       "home": "https://www.lucidfusion.com/images/uploads/projects/Volcom_5c.jpg",
       "technologies": [
-        "/data/images/microsoft-sql-server.svg",
+        "/data/images/footer/sql-server.svg",
         "/data/images/footer/reactletters.gif",
-        "/data/images/footer/microsoft.net"
-      ],
-      "download": [
-        "/data/images/playstore.gif",
-        "/data/images/appstore.gif"
+        "/data/images/footer/microsoft-net.svg"
       ]
     },
     "services": [
@@ -168,21 +170,23 @@
     "_id": 6,
     "client": {
       "urlImage": "/data/images/clients/box.gif",
-      "txtBox1": "Get and share information about social events, places of interest and more.",
-      "txtBox2": "Look for events and fun places around Chaco and Corrientes.",
-      "txtBox3": "All information about the coolest places to hangout right at your fingertips."
+      "txtBox1": "All your favourite food in one App",
+      "txtBox2": "Calculate the price for the delivery, save your address, pay and Get your orders without leaving your house.",
+      "txtBox3": "Track your orders and set the time to be delivered.",
+      "txtBox4": "Available in all platforms."
     },
-    "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://www.volcom/",
     "urlImages": {
+      "download1": "/data/images/playstore.gif",
+      "download2": "/data/images/appstore.gif",
       "boxLogo": "/data/images/boxlogo.gif",
       "boxMobile": "/data/images/boxmobile.gif",
       "boxViews1": "/data/images/boxscreen1.gif",
       "boxViews2": "/data/images/boxscreen2.gif",
       "technologies": [
-        "/data/images/footer/mongodb-logo.gif",
-        "/data/images/footer/html-logo.gif",
-        "/data/images/footer/css-logo.gif"
+        "/data/images/footer/nodejs-logo.gif",
+        "/data/images/footer/microsoft-net.gif",
+        "/data/images/footer/ionic.svg"
       ]
     },
     "services": []

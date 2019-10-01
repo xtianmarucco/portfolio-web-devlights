@@ -77,21 +77,25 @@
     <div>
       <v-container>
         <v-layout row wrap>
-          <v-flex
-            data-aos="fade-right"
-            md6
-            xs12
-            align-center
-            justify-self-center
-            class="text-xs-center"
-          >
-            <v-img :src="work.urlImages.boxLogo" />
+          <v-flex data-aos="fade-right" md6 xs12 align-center justify-self-center>
+            <v-img style="width:400px;" :src="work.urlImages.boxLogo" />
 
             <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
-          </v-flex>
+            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox4 }}</h2>
 
+            <v-layout mt-5>
+              <v-flex md3 xs4 align-center>
+                <v-img :src="work.urlImages.download1" alt />
+              </v-flex>
+
+              <v-flex ml-5 md3 xs4 align-center>
+                <v-img :src="work.urlImages.download2" alt />
+              </v-flex>
+            </v-layout>
+          </v-flex>
+          <v-flex></v-flex>
           <v-flex data-aos="fade-left" md6 xs12>
             <v-img
               style="heigth:250px;"
@@ -108,8 +112,8 @@
               <v-img :src="work.urlImages.boxViews1" />
             </v-flex>
 
-            <v-flex>
-              <v-img :src="work.urlImages.boxViews1" />
+            <v-flex data-aos="fade-left" md6 xs12>
+              <v-img :src="work.urlImages.boxViews2" />
             </v-flex>
           </v-layout>
         </v-container>
@@ -121,26 +125,21 @@
     <div>
       <v-container grid-list-xl>
         <v-layout row wrap>
-          <v-flex
-            data-aos="fade-right"
-            md6
-            xs12
-            align-center
-            justify-self-center
-            class="text-xs-center"
-          >
-            <v-img :src="work.urlImages.ocioShots" alt />
+          <v-flex data-aos="fade-right" class="text-xs-center">
+            <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
 
-            <v-layout row wrap class="grid-tech" style="margin-top:100px;">
+            <!-- <v-layout row wrap class="grid-tech" style="margin-top:100px;">
               <v-flex
+                md6
+                xs12
                 align-content-space-around
                 justify-self-center
                 v-for="item in work.urlImages.download"
                 :key="item"
               >
-                <v-img style="width:60%; margin-top:-80px;" :src="item" alt />
+                <v-img style="width:60%;" :src="item" alt />
               </v-flex>
-            </v-layout>
+            </v-layout>-->
           </v-flex>
 
           <v-flex
@@ -151,13 +150,34 @@
             justify-self-center
             class="text-xs-center"
           >
-            <v-flex>
-              <v-img :src="work.urlImages.ocioLogo" alt />
+            <v-flex md6 xs12>
+              <v-img style="width:250px;" :src="work.urlImages.ocioLogo" alt />
             </v-flex>
             <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
             <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h2>
+
+            <v-layout style="padding-top:25px">
+              <v-flex md3 xs4 align-center>
+                <v-img :src="work.urlImages.ocioDownload1" alt />
+              </v-flex>
+
+              <v-flex ml-5 md3 xs4 align-center>
+                <v-img :src="work.urlImages.ocioDownload2" alt />
+              </v-flex>
+            </v-layout>
           </v-flex>
+          <v-container>
+            <v-layout row wrap>
+              <v-flex data-aos="fade-right" md6 xs12>
+                <v-img :src="work.urlImages.ocioScreen1" />
+              </v-flex>
+              <v-spacer></v-spacer>
+              <v-flex data-aos="fade-left" md6 xs12>
+                <v-img :src="work.urlImages.ocioScreen2" />
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-layout>
       </v-container>
     </div>
@@ -165,17 +185,23 @@
     <div>
       <v-container>
         <v-layout row wrap align-center justify-center>
-          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-            <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
-            <v-img :src="work.urlImages.ceoImg1" alt />
-          </v-flex>
-          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-            <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
-            <v-img :src="work.urlImages.ceoImg2" alt />
-          </v-flex>
-          <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-            <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
-            <v-img :src="work.urlImages.ceoImg3" alt />
+          <v-flex xs12 md10 align-center justify-center>
+            <v-layout row wrap>
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
+                <v-img :src="work.urlImages.ceoImg1" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
+                <v-img :src="work.urlImages.ceoImg2" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
+                <v-img :src="work.urlImages.ceoImg3" alt />
+              </v-flex>
+            </v-layout>
           </v-flex>
         </v-layout>
       </v-container>
@@ -357,10 +383,12 @@
 
         <v-layout row wrap width="100%" right>
           <v-btn round dark color="orange" id href>
+            prEVIOUS PROJECT
             <i class="material-icons" light-primary>keyboard_arrow_left</i>
           </v-btn>
           <v-spacer></v-spacer>
           <v-btn round dark color="green" id href>
+            NEXT PROJECT
             <i class="material-icons" light-primary>keyboard_arrow_right</i>
           </v-btn>
         </v-layout>
