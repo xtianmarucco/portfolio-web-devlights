@@ -26,7 +26,7 @@
       class="img-client"
       :alt="`${work.client.name} image`"
     >
-      <v-container fill-height class="scroll-y">
+      <v-container fill-height class="scroll-y" style="postion:absolute;">
         <v-layout
           align-center
           justify-end
@@ -57,7 +57,7 @@
       </v-container>
     </v-img>
 
-    <v-container>
+    <v-container id="chk-out">
       <v-layout row wrap>
         <v-flex xs12 text-xs-center my-5>
           <v-btn
@@ -72,20 +72,249 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <!-- box section  -->
-
+    <!--  ch section -->
     <div>
+      <div class="py-5" v-if="work.urlImages.notebook" style="position:relative;">
+        <v-container data-aos="zoom-in">
+          <v-layout row wrap>
+            <v-flex ml-5 xs12>
+              <v-img
+                :src="work.urlImages.notebook"
+                :alt="`${work.client.name} logoLivet size image`"
+              ></v-img>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+
+      <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
+        <v-container grid-list-xl>
+          <v-layout row class="grid-tech">
+            <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
+              <img data-aos="flip-right" :src="item" alt />
+
+              <v-img
+                :src="imgDesktop"
+                class="mx-2"
+                :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
+              ></v-img>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+
+      <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
+        <v-container>
+          <v-layout row wrap>
+            <v-flex
+              xs12
+              md6
+              v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
+              :key="imgDesktop"
+            >
+              <v-img
+                :src="imgDesktop"
+                class="mx-2"
+                :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
+              ></v-img>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+    </div>
+
+    <!-- livet sections logo&views -->
+    <div style="margin-top:-300px; margin-bottom:400px;">
+      <div style="position:relative;" id="livetsection1">
+        <v-layout row wrap align-center justify-center class="mt-15">
+          <v-flex
+            style="margin-top:-350;"
+            data-aos="fade-right"
+            xs12
+            md6
+            class="text-xs-center mt-10"
+          >
+            <v-img
+              absolute
+              width="50%"
+              class="mx-auto"
+              :src="work.urlImages.logoLivet"
+              :alt="`${work.client.logoLivet} `"
+            ></v-img>
+
+            <h1 class="livettext">{{work.livetAboutTitle}}</h1>
+
+            <h2 class="livettext" style="margin-top:25px;">{{work.livetAboutSub}}</h2>
+          </v-flex>
+
+          <v-flex md6 xs12>
+            <v-img
+              data-aos="fade-left"
+              :src="work.urlImages.viewsMobile"
+              :alt="`${work.client.viewsMobile} `"
+            ></v-img>
+          </v-flex>
+        </v-layout>
+      </div>
+
+      <div id="livetsection2" style="position:relative;">
+        <v-container>
+          <v-layout text-xs-center align-center row wrap>
+            <v-flex xs12 md3 class="text-xs-center">
+              <v-img data-aos="fade-up" :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
+            </v-flex>
+
+            <v-flex xs12 md3 class="text-xs-center">
+              <v-img
+                data-aos="fade-up"
+                :src="work.urlImages.android"
+                :alt="`${work.client.android} `"
+              ></v-img>
+            </v-flex>
+
+            <v-flex xs12 md6 text-xs-center mb-5>
+              <h1 class="livettext">{{work.livetAboutTitle1}}</h1>
+              <div>
+                <h4 class="livettext">{{work.livetAboutTexta}}</h4>
+                <h4 class="livettext">{{work.livetAboutTextb}}</h4>
+                <h4 class="livettext">{{work.livetAboutTextc}}</h4>
+              </div>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+    </div>
+    <!-- sas mobile  -->
+
+    <div id="sas-section" v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length> 0">
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex v-for="item in work.urlImages.mobileSas" :key="item">
+            <img :src="item" alt />
+          </v-flex>
+
+          <v-flex
+            v-if="work.client"
+            md6
+            xs12
+            align-center
+            justify-self-center
+            class="text-xs-center"
+          >
+            <v-flex>
+              <img :src="work.urlImages.logoSas" alt />
+            </v-flex>
+
+            <v-icon large text-xs-center>computer</v-icon>
+
+            <h2 text-xs-center>{{}}</h2>
+
+            <p text-xs-center>{{ work.client.tra1 }}</p>
+
+            <v-icon large text-xs-center>supervised_user_circle</v-icon>
+            <h2 text-xs-center>{{}}</h2>
+            <p text-xs-center>{{ work.client.tra2 }}</p>
+
+            <v-icon large text-xs-center>info</v-icon>
+            <h2 text-xs-center>{}</h2>
+            <p>{{ work.client.tra3 }}</p>
+
+            <v-icon large text-xs-center>thumb_up</v-icon>
+            <h2 text-xs-center>{{}}</h2>
+            <p text-xs-center>{{ work.client.tra3 }}</p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+
+    <!-- ceo section  -->
+    <div style="position:relative;" id="ceo-section">
+      <v-container>
+        <v-layout row wrap align-center justify-center>
+          <v-flex xs12 md10 align-center justify-center>
+            <v-layout row wrap>
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg1" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg2" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg3" alt />
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+
+    <!-- ocio section  -->
+
+    <div id="ocio-section" style="position:relative;">
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex data-aos="fade-right" class="text-xs-center">
+            <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
+          </v-flex>
+
+          <v-flex
+            data-aos="fade-left"
+            md6
+            xs12
+            align-center
+            justify-self-center
+            class="text-xs-center"
+          >
+            <v-flex justify-self-center md12 xs12>
+              <v-img style="transform:scale(.8);" :src="work.urlImages.ocioLogo" alt />
+            </v-flex>
+            <v-flex>
+              <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h2>
+            </v-flex>
+            <v-container>
+              <v-layout mt-5 row wrap>
+                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
+
+                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload2" alt />
+              </v-layout>
+            </v-container>
+          </v-flex>
+          <v-container>
+            <v-layout row wrap>
+              <v-flex data-aos="fade-right" md6 xs12>
+                <v-img :src="work.urlImages.ocioScreen1" />
+              </v-flex>
+              <v-spacer></v-spacer>
+              <v-flex data-aos="fade-left" md6 xs12>
+                <v-img :src="work.urlImages.ocioScreen2" />
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-layout>
+      </v-container>
+    </div>
+
+    <!-- box section-->
+
+    <div style="position:relative;">
       <v-container>
         <v-layout row wrap>
           <v-flex data-aos="fade-right" md6 xs12 align-center justify-self-center>
-            <v-img style="width:400px;" :src="work.urlImages.boxLogo" />
-
-            <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
-            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
-            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
-            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox4 }}</h2>
-
-            <v-layout mt-5>
+            <v-img style="transform:scale(.8);" :src="work.urlImages.boxLogo" />
+            <v-flex ml-5 mr-5>
+              <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox4 }}</h2>
+            </v-flex>
+            <v-layout justify-center row wrap mt-5 ml-5 mr-5>
               <v-flex md3 xs4 align-center>
                 <v-img :src="work.urlImages.download1" alt />
               </v-flex>
@@ -106,7 +335,7 @@
             />
           </v-flex>
         </v-layout>
-        <v-container>
+        <v-container mb-5>
           <v-layout row wrap>
             <v-flex data-aos="fade-right" md6 xs12>
               <v-img :src="work.urlImages.boxViews1" />
@@ -120,239 +349,15 @@
       </v-container>
     </div>
 
-    <!-- ocio section  -->
-
-    <div>
-      <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex data-aos="fade-right" class="text-xs-center">
-            <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
-
-            <!-- <v-layout row wrap class="grid-tech" style="margin-top:100px;">
-              <v-flex
-                md6
-                xs12
-                align-content-space-around
-                justify-self-center
-                v-for="item in work.urlImages.download"
-                :key="item"
-              >
-                <v-img style="width:60%;" :src="item" alt />
-              </v-flex>
-            </v-layout>-->
-          </v-flex>
-
-          <v-flex
-            data-aos="fade-left"
-            md6
-            xs12
-            align-center
-            justify-self-center
-            class="text-xs-center"
-          >
-            <v-flex md6 xs12>
-              <v-img style="width:250px;" :src="work.urlImages.ocioLogo" alt />
-            </v-flex>
-            <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
-            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
-            <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h2>
-
-            <v-layout style="padding-top:25px">
-              <v-flex md3 xs4 align-center>
-                <v-img :src="work.urlImages.ocioDownload1" alt />
-              </v-flex>
-
-              <v-flex ml-5 md3 xs4 align-center>
-                <v-img :src="work.urlImages.ocioDownload2" alt />
-              </v-flex>
-            </v-layout>
-          </v-flex>
-          <v-container>
-            <v-layout row wrap>
-              <v-flex data-aos="fade-right" md6 xs12>
-                <v-img :src="work.urlImages.ocioScreen1" />
-              </v-flex>
-              <v-spacer></v-spacer>
-              <v-flex data-aos="fade-left" md6 xs12>
-                <v-img :src="work.urlImages.ocioScreen2" />
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-layout>
-      </v-container>
-    </div>
-    <!-- ceo section  -->
-    <div>
-      <v-container>
-        <v-layout row wrap align-center justify-center>
-          <v-flex xs12 md10 align-center justify-center>
-            <v-layout row wrap>
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
-                <v-img :src="work.urlImages.ceoImg1" alt />
-              </v-flex>
-
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
-                <v-img :src="work.urlImages.ceoImg2" alt />
-              </v-flex>
-
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
-                <v-img :src="work.urlImages.ceoImg3" alt />
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <!-- livet sections logo&views -->
-    <div id="livetsection1">
-      <v-layout row wrap align-center justify-center class="mt-15">
-        <v-flex
-          style="margin-top:-350;"
-          data-aos="fade-right"
-          xs12
-          md6
-          class="text-xs-center mt-10"
-        >
-          <v-img
-            absolute
-            width="50%"
-            class="mx-auto"
-            :src="work.urlImages.logoLivet"
-            :alt="`${work.client.logoLivet} `"
-          ></v-img>
-
-          <h1 class="livettext">{{work.livetAboutTitle}}</h1>
-
-          <h2 class="livettext" style="margin-top:25px;">{{work.livetAboutSub}}</h2>
-        </v-flex>
-
-        <v-flex md6 xs12>
-          <v-img
-            data-aos="fade-left"
-            :src="work.urlImages.viewsMobile"
-            :alt="`${work.client.viewsMobile} `"
-          ></v-img>
-        </v-flex>
-      </v-layout>
-    </div>
-
-    <!-- livet sections text-->
-
-    <div id="livetsection2" style=" margin-top: 150px; ">
-      <v-container>
-        <v-layout text-xs-center align-center row wrap>
-          <v-flex xs12 md3 class="text-xs-center">
-            <v-img data-aos="fade-up" :src="work.urlImages.apple" :alt="`${work.client.apple} `"></v-img>
-          </v-flex>
-
-          <v-flex xs12 md3 class="text-xs-center">
-            <v-img
-              data-aos="fade-up"
-              :src="work.urlImages.android"
-              :alt="`${work.client.android} `"
-            ></v-img>
-          </v-flex>
-
-          <v-flex xs12 md6 text-xs-center>
-            <h1 class="livettext">{{work.livetAboutTitle1}}</h1>
-            <div>
-              <h4 class="livettext">{{work.livetAboutTexta}}</h4>
-              <h4 class="livettext">{{work.livetAboutTextb}}</h4>
-              <h4 class="livettext">{{work.livetAboutTextc}}</h4>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <!--  -->
-    <div style="margin-top:-400px;" class="py-5" v-if="work.urlImages.notebook">
-      <v-container data-aos="zoom-in">
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
-      <v-container grid-list-xl>
-        <v-layout row class="grid-tech">
-          <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
-            <img data-aos="flip-right" :src="item" alt />
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
-      <v-container>
-        <v-layout row wrap>
-          <v-flex
-            xs12
-            md6
-            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
-            :key="imgDesktop"
-          >
-            <v-img
-              :src="imgDesktop"
-              class="mx-2"
-              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
-            ></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
-    <!-- sas mobile  -->
-    <div v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length> 0">
-      <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex v-for="item in work.urlImages.mobileSas" :key="item">
-            <img :src="item" alt />
-          </v-flex>
-
-          <v-flex md6 xs12 align-center justify-self-center class="text-xs-center">
-            <v-flex>
-              <img :src="work.urlImages.logoSas" alt />
-            </v-flex>
-
-            <v-icon large text-xs-center>computer</v-icon>
-
-            <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
-
-            <p text-xs-center>{{ work.client.tra1 }}</p>
-
-            <v-icon large text-xs-center>supervised_user_circle</v-icon>
-            <h2 text-xs-center>More benefits for users</h2>
-            <p text-xs-center>{{ work.client.tra2 }}</p>
-
-            <v-icon large text-xs-center>info</v-icon>
-            <h2 text-xs-center>Important information for Civil entities just a click away</h2>
-            <p>{{ work.client.tra3 }}</p>
-
-            <v-icon large text-xs-center>thumb_up</v-icon>
-            <h2 text-xs-center>Useful information</h2>
-            <p text-xs-center>{{ work.client.tra3 }}</p>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
     <!-- technologies -->
-    <v-container>
-      <v-layout row wrap my-5>
-        <v-flex xs12 text-xs-center>
-          <h2>TECHNOLOGIES USED IN THIS PROJECT</h2>
+    <v-container id="technologies-container">
+      <v-layout row wrap my-5 mt-5>
+        <v-flex xs12 text-xs-center mt-5>
+          <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
           <div class="line grey darken-4 mx-auto my-3"></div>
           <!-- SEPARADOR  -->
         </v-flex>
-        <v-layout row wrap class="grid-tech" style="margin-top:100px;">
+        <v-layout ml-2 mr-2 row wrap class="grid-tech">
           <v-flex
             md12
             xs12
@@ -363,8 +368,9 @@
             <img
               align-center
               justify-self-center
-              height="200px"
+              height="250px"
               width="300px"
+              style="transform:scale(.8);"
               data-aos="fade-up"
               :src="item"
               alt
@@ -382,14 +388,13 @@
         <!-- next and previous -->
 
         <v-layout row wrap width="100%" right>
-          <v-btn round dark color="orange" id href>
-            prEVIOUS PROJECT
+          <v-btn round dark color="green" id href>
             <i class="material-icons" light-primary>keyboard_arrow_left</i>
+            prEVIOUS PROJECT
           </v-btn>
           <v-spacer></v-spacer>
-          <v-btn round dark color="green" id href>
-            NEXT PROJECT
-            <i class="material-icons" light-primary>keyboard_arrow_right</i>
+          <v-btn @click round dark color="green" id href>
+            <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT PROJECT
           </v-btn>
         </v-layout>
 
@@ -412,14 +417,14 @@
 
               <br />
               <v-flex xs12 text-xs-center align-center>
-                <v-form ref="form">
+                <v-form @submit.prevent="submitForm" class="form_class">
                   <v-text-field v-model="form.name" label="Name" required outline></v-text-field>
 
                   <v-text-field v-model="form.email" label="Email" required outline></v-text-field>
 
                   <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
 
-                  <v-btn round color="primary" :disabled="$v.$invalid">send message</v-btn>
+                  <v-btn type="submit" round color="primary" :disabled="$v.$invalid">send message</v-btn>
                 </v-form>
               </v-flex>
             </v-layout>
@@ -442,14 +447,10 @@
 
 
 <script>
-// const btnScrollToTop = document.querySelector("#btnScrollToTop");
-
-// btnScrollToTop.addEventListener("click", function() {
-//   window.scrollTo(0, 0);
-// });
-
 import { mapGetters, mapActions } from "vuex";
 import { required, email } from "vuelidate/lib/validators";
+import mailgun from "mailgun.js";
+
 export default {
   layout: "empty",
 
@@ -463,7 +464,13 @@ export default {
         name: "",
         message: "",
         email: ""
-      }
+      },
+
+      // mailgun settings
+      mg: mailgun.client({
+        username: "api",
+        key: "key-d21cdfd0bcf74daf338705e69fd03bd4"
+      })
     };
   },
 
@@ -500,7 +507,10 @@ export default {
 
     handleScroll() {
       this.colorToolbar = document.documentElement.scrollTop > 60;
-    }
+    },
+
+    // submnitforms function
+    submitForm() {}
   }
 };
 </script>
@@ -565,10 +575,6 @@ export default {
 //   }
 // }
 
-h1 {
-  color: #ffffff;
-}
-
 #close-icon {
   margin-left: 90%;
   margin-top: 15px;
@@ -591,7 +597,42 @@ h4 {
   line-height: 25px;
 }
 
-.livettext {
-  color: #ffffff;
+@media only screen and (max-width: 600px) {
+  // #ocio-section {
+  //   margin-top: -300px;
+  // }
+
+  // // #technologies-container {
+  // //   margin-top: 200px;
+  // // }
+  // // #ceo-section {
+  // //   margin-top: -200px;
+  // // }
+
+  .grid-tech {
+    display: block;
+  }
+
+  // // .py-5 {
+  // //   margin-top: 200px;
+  // // }
+
+  // #ceo-section {
+  //   position: absolute;
+  // }
+
+  // #chk-out {
+  //   margin-bottom: 350px;
+  // }
+
+  // // #sas-section {
+  // //   margin-top: 200px;
+  // // }
+}
+
+@media only screen and (min-width: 1200px) {
+  // #technologies-container {
+  //   margin-top: 450px;
+  // }
 }
 </style>

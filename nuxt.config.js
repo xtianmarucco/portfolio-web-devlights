@@ -88,8 +88,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "cookie-universal-nuxt",
-    "nuxt-fontawesome"
+    "cookie-universal-nuxt"
 
   ],
   /*

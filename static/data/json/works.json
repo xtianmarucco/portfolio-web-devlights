@@ -3,7 +3,7 @@
     "_id": 1,
     "client": {
       "urlImage": "/data/images/chbanner.gif",
-      "name": "CREATIVE HUMANS"
+      "name": ""
     },
     "about": "About Creative Humans",
     "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
@@ -30,10 +30,7 @@
         "/data/images/footer/pug-logo.gif"
       ]
     },
-    "services": [
-      "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
-      "As you browse, filter your video search by industry, style, budget, location, union affiliation and more"
-    ]
+    "services": []
   },
   {
     "_id": 2,
@@ -118,7 +115,7 @@
     "urlWork": "https://igpj.corrientes.gob.ar",
     "urlImages": {
       "ceoImg1": "/data/images/invoice.gif",
-      "ceoImg2": "/data/images/stockmgn.png",
+      "ceoImg2": "/data/images/stockmgn.png.gif",
       "ceoImg3": "/data/images/payment.gif",
       "desktop": [
         "/data/images/ceo1.png",
@@ -142,7 +139,7 @@
     },
     "client": {
       "urlImage": "/data/images/clients/ocio.gif",
-      "name": "Tiempo de Ocio",
+      "name": "",
       "txtOcio1": "Get and share information about social events, places of interest and more.",
       "txtOcio2": "Look for events and fun places around Chaco and Corrientes.",
       "txtOcio3": "All information about the coolest places to hangout right at your fingertips.",
@@ -159,12 +156,10 @@
       "technologies": [
         "/data/images/footer/sql-server.svg",
         "/data/images/footer/reactletters.gif",
-        "/data/images/footer/microsoft-net.svg"
+        "/data/images/footer/dotnet.gif"
       ]
     },
-    "services": [
-      "FIND THE COOLEST PLACES AND LATEST CULTURAL EVENTS IN YOUR AREA"
-    ]
+    "services": []
   },
   {
     "_id": 6,
@@ -184,9 +179,9 @@
       "boxViews1": "/data/images/boxscreen1.gif",
       "boxViews2": "/data/images/boxscreen2.gif",
       "technologies": [
+        "/data/images/footer/ionic.svg",
         "/data/images/footer/nodejs-logo.gif",
-        "/data/images/footer/microsoft-net.gif",
-        "/data/images/footer/ionic.svg"
+        "/data/images/footer/dotnet.gif"
       ]
     },
     "services": []
