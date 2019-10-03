@@ -73,19 +73,14 @@
       </v-layout>
     </v-container>
     <!--  ch section -->
-    <div>
-      <div class="py-5" v-if="work.urlImages.notebook" style="position:relative;">
-        <v-container data-aos="zoom-in">
-          <v-layout row wrap>
-            <v-flex ml-5 xs12>
-              <v-img
-                :src="work.urlImages.notebook"
-                :alt="`${work.client.name} logoLivet size image`"
-              ></v-img>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </div>
+    <div class="py-5" v-if="work.urlImages.notebook">
+      <v-container data-aos="zoom-in">
+        <v-layout row wrap>
+          <v-flex ml-5 xs12>
+            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
+          </v-flex>
+        </v-layout>
+      </v-container>
 
       <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
         <v-container grid-list-xl>
@@ -124,7 +119,7 @@
     </div>
 
     <!-- livet sections logo&views -->
-    <div style="margin-top:-300px; margin-bottom:400px;">
+    <div style="margin-top:-300px;">
       <div style="position:relative;" id="livetsection1">
         <v-layout row wrap align-center justify-center class="mt-15">
           <v-flex
@@ -157,7 +152,7 @@
         </v-layout>
       </div>
 
-      <div id="livetsection2" style="position:relative;">
+      <div id="livetsection2" style="position:relative; margin-bottom:-200px;">
         <v-container>
           <v-layout text-xs-center align-center row wrap>
             <v-flex xs12 md3 class="text-xs-center">
@@ -187,7 +182,15 @@
     <!-- sas mobile  -->
 
     <div id="sas-section" v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length> 0">
-      <v-container grid-list-xl>
+      <v-container>
+        <v-layout row wrap>
+          <v-flex>
+            <v-img></v-img>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
+      <v-container grid-list-xl style="margin-top:350px;">
         <v-layout row wrap>
           <v-flex v-for="item in work.urlImages.mobileSas" :key="item">
             <img :src="item" alt />
@@ -207,20 +210,20 @@
 
             <v-icon large text-xs-center>computer</v-icon>
 
-            <h2 text-xs-center>{{}}</h2>
+            <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
 
             <p text-xs-center>{{ work.client.tra1 }}</p>
 
             <v-icon large text-xs-center>supervised_user_circle</v-icon>
-            <h2 text-xs-center>{{}}</h2>
+            <h2 text-xs-center>More benefits for users</h2>
             <p text-xs-center>{{ work.client.tra2 }}</p>
 
             <v-icon large text-xs-center>info</v-icon>
-            <h2 text-xs-center>{}</h2>
+            <h2 text-xs-center>Important information for civil entities just a click away</h2>
             <p>{{ work.client.tra3 }}</p>
 
             <v-icon large text-xs-center>thumb_up</v-icon>
-            <h2 text-xs-center>{{}}</h2>
+            <h2 text-xs-center>Useful information</h2>
             <p text-xs-center>{{ work.client.tra3 }}</p>
           </v-flex>
         </v-layout>
@@ -229,10 +232,27 @@
 
     <!-- ceo section  -->
     <div style="position:relative;" id="ceo-section">
+      <v-container style="margin-top:400px;">
+        <v-layout row wrap>
+          <v-flex
+            xs12
+            md6
+            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
+            :key="imgDesktop"
+          >
+            <v-img
+              :src="imgDesktop"
+              class="mx-2"
+              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
+            ></v-img>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
       <v-container>
         <v-layout row wrap align-center justify-center>
           <v-flex xs12 md10 align-center justify-center>
-            <v-layout row wrap>
+            <v-layout row wrap style="margin-top:200px;  margin-bottom:-400px;">
               <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
                 <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
                 <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg1" alt />
@@ -303,8 +323,8 @@
 
     <!-- box section-->
 
-    <div style="position:relative;">
-      <v-container>
+    <div>
+      <v-container style="margin-top:-250px;">
         <v-layout row wrap>
           <v-flex data-aos="fade-right" md6 xs12 align-center justify-self-center>
             <v-img style="transform:scale(.8);" :src="work.urlImages.boxLogo" />
@@ -324,7 +344,7 @@
               </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex></v-flex>
+
           <v-flex data-aos="fade-left" md6 xs12>
             <v-img
               style="heigth:250px;"
@@ -350,94 +370,98 @@
     </div>
 
     <!-- technologies -->
-    <v-container id="technologies-container">
-      <v-layout row wrap my-5 mt-5>
-        <v-flex xs12 text-xs-center mt-5>
-          <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
-          <div class="line grey darken-4 mx-auto my-3"></div>
-          <!-- SEPARADOR  -->
-        </v-flex>
-        <v-layout ml-2 mr-2 row wrap class="grid-tech">
-          <v-flex
-            md12
-            xs12
-            justify-self-center
-            v-for="item in work.urlImages.technologies"
-            :key="item"
-          >
-            <img
-              align-center
-              justify-self-center
-              height="250px"
-              width="300px"
-              style="transform:scale(.8);"
-              data-aos="fade-up"
-              :src="item"
-              alt
-            />
+    <div>
+      <v-container id="technologies-container" style="position:relative;">
+        <v-layout row wrap my-5 mt-5>
+          <v-flex xs12 text-xs-center mt-5>
+            <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
+            <div class="line grey darken-4 mx-auto my-3"></div>
+            <!-- SEPARADOR  -->
           </v-flex>
+          <v-layout ml-2 mr-2 row wrap class="grid-tech">
+            <v-flex
+              md12
+              xs12
+              justify-self-center
+              v-for="item in work.urlImages.technologies"
+              :key="item"
+            >
+              <img
+                align-center
+                justify-self-center
+                height="200px"
+                width="300px"
+                style="transform:scale(.8);"
+                data-aos="fade-up"
+                :src="item"
+                alt
+              />
+            </v-flex>
+          </v-layout>
         </v-layout>
-      </v-layout>
-    </v-container>
+      </v-container>
+    </div>
 
-    <v-container>
-      <v-layout row wrap>
-        <v-flex xs12 text-xs-center>
-          <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
-        </v-flex>
-        <!-- next and previous -->
+    <div>
+      <v-container>
+        <v-layout row wrap>
+          <v-flex xs12 text-xs-center>
+            <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+          </v-flex>
+          <!-- next and previous -->
 
-        <v-layout row wrap width="100%" right>
-          <v-btn round dark color="green" id href>
-            <i class="material-icons" light-primary>keyboard_arrow_left</i>
-            prEVIOUS PROJECT
-          </v-btn>
-          <v-spacer></v-spacer>
-          <v-btn @click round dark color="green" id href>
-            <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT PROJECT
-          </v-btn>
-        </v-layout>
-
-        <!-- next and previous -->
-        <v-container>
           <v-layout row wrap width="100%" right>
-            <v-btn fab dark color="blue" id="btnScrollToTop" href="#top">
-              <i class="material-icons" light-primary>arrow_upward</i>
+            <v-btn round dark color="green" id href>
+              <i class="material-icons" light-primary>keyboard_arrow_left</i>
+              prEVIOUS PROJECT
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn @click round dark color="green" id href>
+              <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT PROJECT
             </v-btn>
           </v-layout>
-        </v-container>
 
-        <v-navigation-drawer v-model="drawer" app fixed temporary width="560px" right>
+          <!-- next and previous -->
           <v-container>
-            <v-layout row wrap width="100%">
-              <v-flex xs12>
-                <v-spacer></v-spacer>
-                <v-icon right id="close-icon" @click="drawer = !drawer" large mr-0>close</v-icon>
-              </v-flex>
-
-              <br />
-              <v-flex xs12 text-xs-center align-center>
-                <v-form @submit.prevent="submitForm" class="form_class">
-                  <v-text-field v-model="form.name" label="Name" required outline></v-text-field>
-
-                  <v-text-field v-model="form.email" label="Email" required outline></v-text-field>
-
-                  <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
-
-                  <v-btn type="submit" round color="primary" :disabled="$v.$invalid">send message</v-btn>
-                </v-form>
-              </v-flex>
+            <v-layout row wrap width="100%" right>
+              <v-btn fab dark color="blue" id="btnScrollToTop" href="#top">
+                <i class="material-icons" light-primary>arrow_upward</i>
+              </v-btn>
             </v-layout>
           </v-container>
 
-          <!-- <v-form ref="form" v-model="valid" lazy-validation>
+          <v-navigation-drawer v-model="drawer" app fixed temporary width="560px" right>
+            <v-container>
+              <v-layout row wrap width="100%">
+                <v-flex xs12>
+                  <v-spacer></v-spacer>
+                  <v-icon right id="close-icon" @click="drawer = !drawer" large mr-0>close</v-icon>
+                </v-flex>
+
+                <br />
+                <v-flex xs12 text-xs-center align-center>
+                  <v-form @submit.prevent="submitForm" class="form_class">
+                    <v-text-field v-model="form.name" label="Name" required outline></v-text-field>
+
+                    <v-text-field v-model="form.email" label="Email" required outline></v-text-field>
+
+                    <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
+
+                    <v-btn type="submit" round color="primary" :disabled="$v.$invalid">send message</v-btn>
+                  </v-form>
+                </v-flex>
+              </v-layout>
+            </v-container>
+
+            <!-- <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
 
             <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-          </v-form>-->
-        </v-navigation-drawer>
-      </v-layout>
-    </v-container>
+            </v-form>-->
+          </v-navigation-drawer>
+        </v-layout>
+      </v-container>
+    </div>
   </div>
 </template>
 
