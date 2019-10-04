@@ -294,8 +294,11 @@
               <v-img style="transform:scale(.8);" :src="work.urlImages.ocioLogo" alt />
             </v-flex>
             <v-flex>
+              <v-img :src="work.urlImages.ocioLogo" alt />
               <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcio1 }}</h2>
+              <v-img :src="work.urlImages.ocioLogo" alt />
               <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2 }}</h2>
+              <v-img :src="work.urlImages.ocioLogo" alt />
               <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h2>
             </v-flex>
             <v-container>

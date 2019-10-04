@@ -36,18 +36,27 @@
     "_id": 2,
     "client": {
       "urlImage": "/data/images/clients/livet.gif",
-      "name": ""
+      "name": "",
+      "livetAboutTitle": "The easiest way to take care of your pets",
+      "livetAboutSub": "Because you care...",
+      "livetAboutTitle1": "About Livet",
+      "livetAboutTexta": "We built a set of tools for tracking medical history of your pet",
+      "livetAboutTextb": "Intituive and easy to use, acces to all your pet's information in the easiest and more convienient way   ",
+      "livetAboutTextc": "You can create as muany pet profiles as you wish and add information about your pets",
+      "livetAboutTitleEs": "La forma más sencilla de cuidar a tu mascota.",
+      "livetAboutSubEs": "Porque sabemos que te importa...",
+      "livetAboutTitleEs2": "Sobre Livet...",
+      "livetAboutTextEs3": "Creamos la mejor herramienta para tener control de la historía medica de tus mascotas.",
+      "livetAboutTextEs2": "Intuitiva y facil de usar, accede a la libreta sanitaria y toda la informacion de tu mascota de la forma mas facíl y conveniente.",
+      "livetAboutTextEs1": "Podes crear perfiles para cada una de tus mascotas y agregar todo su información."
     },
     "styles": {
       "background": "linear-gradient(0deg, #fbfbfb 0%, purple 100%)"
     },
-    "livetAboutTitle": "The easiest way to take care of your pets",
-    "livetAboutSub": "Because you care...",
-    "livetAboutTitle1": "About Livet",
-    "livetAboutTexta": "We built a set of tools for tracking medical history of your pet",
-    "livetAboutTextb": "Intituive and easy to use, acces to all your pet's information in the easiest and more convienient way   ",
-    "livetAboutTextc": "You can create as muany pet profiles as you wish and add information about your pets",
     "urlImages": {
+      "location": ,
+      "five": ,
+      : ,
       "logoLivet": "/data/images/logolivet.png",
       "viewsMobile": "/data/images/vistas.png",
       "apple": "/data/images/Iphone6.png",
@@ -78,7 +87,13 @@
       "tra1": "Set apointments, request information, and schedule turns",
       "tra2": "Check the list of companies authorised by IGJ , get information about requierements, fees, requirements and how to present claims",
       "tra3": "Assesment, annual obligations, regulations and legal frameworks",
-      "tra4": "Set apointments, request information, and and schedule turns"
+      "tra4": "Set apointments, request information, and and schedule turns",
+      "traEs1": "Los trámites de Reserva de denominación, Solicitud de información y Constitución de SAS pueden realizarse de manera online.",
+      "es": {
+        "traEs2": "Conozca las empresas habilitadas por IGJ. Información sobre costos y gastos. Procedimiento para presentar una denuncia.",
+        "traEs3": "Realización de trámites. Modelos de estatuto. Asesoramiento. Obligaciones anuales.",
+        "traEs4": "Evite vistas. Conozca los requisitos para presentar correctamente los trámites. Normativa. Preguntas frecuentes."
+      }
     },
     "styles": {
       "background": "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(4,139,9,1) 100%)"
@@ -109,7 +124,10 @@
       "name": " ",
       "txtCeo1": "Sales management",
       "txtCeo2": "Stock control",
-      "txtCeo3": "Electronic Invoicing"
+      "txtCeo3": "Electronic Invoicing",
+      "txtCeoEs1": "Administracíon y control de ventas",
+      "txtCeoEs2": "Control de stock",
+      "txtCeoEs3": "Facturacíon electronica"
     },
     "story": "Previously on Magento 1 and 2, Volcom first approached Lucid Fusion to redesign their ecommerce experience on Shopify Plus. With our most advanced WordPress <> Shopify integration to date, Volcom new site encompasses shoppable posts, hybrid collection landing pages, and an impressive mobile experience that outperformed on Black Friday.",
     "urlWork": "https://igpj.corrientes.gob.ar",
@@ -143,7 +161,13 @@
       "txtOcio1": "Get and share information about social events, places of interest and more.",
       "txtOcio2": "Look for events and fun places around Chaco and Corrientes.",
       "txtOcio3": "All information about the coolest places to hangout right at your fingertips.",
-      "txtOcio4": "Available in all platforms."
+      "txtOcio4": "Available in all platforms.",
+      "txtOcioEs1": "Disponible en todas la plataformas",
+      "es": {
+        "txtOcioEs2": "Encuentra lugares de onda los eventos mas divertidos en Chaco y Corrientes.",
+        "txtOcioEs3": "Toda la información que necesitas para disfrutar tu tiempo libre en la punta de tus dedos.",
+        "txtOcioEs4": "Obtene informacion sobre los ultimos eventos sociales y lugares de moda."
+      }
     },
     "urlImages": {
       "ocioDownload1": "/data/images/appstore2.gif",
@@ -168,7 +192,11 @@
       "txtBox1": "All your favourite food in one App",
       "txtBox2": "Calculate the price for the delivery, save your address, pay and Get your orders without leaving your house.",
       "txtBox3": "Track your orders and set the time to be delivered.",
-      "txtBox4": "Available in all platforms."
+      "txtBox4": "Available in all platforms.",
+      "txtBoxEs1": "Tus platos favoritos en una sola App .",
+      "txtBoxEs2": "Calcula el precio del envio, guarda tus direcciones frecuentes, paga y recibi tu orden sin salir de tu casa.",
+      "txtBoxEs3": "Segui tus pedidos y elegi la hora de envio.",
+      "txtBoxEs4": "Disponible en todas la plataformas"
     },
     "urlWork": "https://www.volcom/",
     "urlImages": {
