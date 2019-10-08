@@ -54,9 +54,6 @@
       "background": "linear-gradient(0deg, #fbfbfb 0%, purple 100%)"
     },
     "urlImages": {
-      "location": ,
-      "five": ,
-      : ,
       "logoLivet": "/data/images/logolivet.png",
       "viewsMobile": "/data/images/vistas.png",
       "apple": "/data/images/Iphone6.png",
@@ -163,13 +160,14 @@
       "txtOcio3": "All information about the coolest places to hangout right at your fingertips.",
       "txtOcio4": "Available in all platforms.",
       "txtOcioEs1": "Disponible en todas la plataformas",
-      "es": {
-        "txtOcioEs2": "Encuentra lugares de onda los eventos mas divertidos en Chaco y Corrientes.",
-        "txtOcioEs3": "Toda la información que necesitas para disfrutar tu tiempo libre en la punta de tus dedos.",
-        "txtOcioEs4": "Obtene informacion sobre los ultimos eventos sociales y lugares de moda."
-      }
+      "txtOcioEs2": "Encuentra lugares de onda los eventos mas divertidos en Chaco y Corrientes.",
+      "txtOcioEs3": "Toda la información que necesitas para disfrutar tu tiempo libre en la punta de tus dedos.",
+      "txtOcioEs4": "Obtene informacion sobre los ultimos eventos sociales y lugares de moda."
     },
     "urlImages": {
+      "location": "/data/images/location.gif",
+      "five": "/data/images/glass.gif",
+      "glass": "/data/images/hfive.gif",
       "ocioDownload1": "/data/images/appstore2.gif",
       "ocioDownload2": "/data/images/playstore2.gif",
       "ocioScreen1": "/data/images/ocioscreen1.gif",

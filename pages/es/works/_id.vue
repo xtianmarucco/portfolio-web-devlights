@@ -280,6 +280,14 @@
         <v-layout row wrap>
           <v-flex data-aos="fade-right" class="text-xs-center">
             <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
+            <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs1 }}</h4>
+            <v-container>
+              <v-layout mt-5 row wrap>
+                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
+
+                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload2" alt />
+              </v-layout>
+            </v-container>
           </v-flex>
 
           <v-flex
@@ -293,23 +301,14 @@
             <v-flex justify-self-center md12 xs12>
               <v-img style="transform:scale(.8);" :src="work.urlImages.ocioLogo" alt />
             </v-flex>
-            <!-- <v-flex>
-              <img src alt />
-              <h2 style="padding-top:25px;" text-xs-center>{{ work.client.es.txtOcioEs4 }}</h2>
-              <img src alt />
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.es.txtOcioEs2}}</h2>
-              <img src alt />
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.es.txtOcioEs3 }}</h2>
-              <img src alt />
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs1 }}</h2>
-            </v-flex>-->
-            <v-container>
-              <v-layout mt-5 row wrap>
-                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
-
-                <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload2" alt />
-              </v-layout>
-            </v-container>
+            <v-flex>
+              <img src="/data/images/location.gif" alt srcset />
+              <h4 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcioEs4 }}</h4>
+              <img style="padding-top:25px" src="/data/images/glass.gif" alt srcset />
+              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs2}}</h4>
+              <img style="padding-top:25px" src="/data/images/hfive.gif" alt srcset />
+              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs3 }}</h4>
+            </v-flex>
           </v-flex>
           <v-container>
             <v-layout row wrap>
@@ -415,15 +414,19 @@
           </v-flex>
           <!-- next and previous -->
 
-          <v-layout row wrap width="100%" right>
-            <v-btn round dark color="green" id href>
-              <i class="material-icons" light-primary>keyboard_arrow_left</i>
-              prEVIOUS PROJECT
-            </v-btn>
-            <v-spacer></v-spacer>
-            <v-btn @click round dark color="green" id href>
-              <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT PROJECT
-            </v-btn>
+          <v-layout row wrap>
+            <v-flex md6 xs6 text-xs-center>
+              <v-btn round dark color="green" id href>
+                <i class="material-icons" light-primary>keyboard_arrow_left</i>
+                prEVIOUS
+              </v-btn>
+            </v-flex>
+
+            <v-flex md6 xs6 text-xs-center>
+              <v-btn @click round dark color="green" id href>
+                <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT
+              </v-btn>
+            </v-flex>
           </v-layout>
 
           <!-- next and previous -->
