@@ -76,24 +76,21 @@
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
-          <v-container ml-5 mr-5>
+          <v-layout md12 row wrap>
             <v-flex md12 xs12 justify-self-center text-xs-center>
-              <v-flex justify-self-center mt-5>
-                <img
-                  style="transform:scale(.8); height:10%; margin-top:25px;"
-                  :src="work.urlImages.clapper"
-                />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs}}</h3>
-              </v-flex>
-              <v-flex>
-                <img
-                  style="transform:scale(.8); height:10%; margin-top:25px;"
-                  :src="work.urlImages.camera"
-                />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs2}}</h3>
-              </v-flex>
+              <v-layout row wrap>
+                <v-flex md6 xs12 justify-self-center mt-5>
+                  <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
+                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs}}</h3>
+                </v-flex>
+
+                <v-flex md6 xs12 justify-self-center mt-5>
+                  <img style=" margin-top:25px;" :src="work.urlImages.camera" />
+                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs2}}</h3>
+                </v-flex>
+              </v-layout>
             </v-flex>
-          </v-container>
+          </v-layout>
         </v-layout>
         <v-layout row wrap class="grid-tech">
           <v-flex ml-5 xs12>
@@ -303,7 +300,7 @@
         <v-layout row wrap>
           <v-flex data-aos="fade-right" class="text-xs-center">
             <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
-            <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs1 }}</h4>
+            <h3 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs1 }}</h3>
             <v-container>
               <v-layout mt-5 row wrap>
                 <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
@@ -433,7 +430,21 @@
         </v-layout>
       </v-container>
     </div>
+    <v-layout row wrap>
+      <v-flex md6 xs6 text-xs-center>
+        <v-btn round dark color="green" id :to="`/works/${work.back}`" nuxt>
+          <i class="material-icons" light-primary>keyboard_arrow_left</i>
+          prEVIOUS
+        </v-btn>
+      </v-flex>
 
+      <v-flex md6 xs6 text-xs-center3
+        <v-btn round dark color="green" id href :to="`/works/${work.next}`" nuxt>
+          <i class="material-icons" light-primary>keyboard_arrow_right</i>
+          NEXT
+        </v-btn>
+      </v-flex>
+    </v-layout>
     <div>
       <v-container>
         <v-layout row wrap>
@@ -441,21 +452,6 @@
             <v-btn round color="#FF9800" @click="drawer = !drawer">TRABAJEMOS JUNTOS</v-btn>
           </v-flex>
           <!-- next and previous -->
-
-          <v-layout row wrap>
-            <v-flex md6 xs6 text-xs-center>
-              <v-btn round dark color="green" id href>
-                <i class="material-icons" light-primary>keyboard_arrow_left</i>
-                prEVIOUS
-              </v-btn>
-            </v-flex>
-
-            <v-flex md6 xs6 text-xs-center>
-              <v-btn @click round dark color="green" id href>
-                <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT
-              </v-btn>
-            </v-flex>
-          </v-layout>
 
           <!-- next and previous -->
           <v-container>
@@ -581,11 +577,11 @@ export default {
 </script>
 
 <style lang="scss">
-.img-client {
-  .v-responsive__content {
-    // background-color: rgba(0, 0, 0, 0.25);
-  }
-}
+// .img-client {
+// //   .v-responsive__content {
+// //     // background-color: rgba(0, 0, 0, 0.25);
+// //   }
+// }
 
 .grid-tech {
   display: grid;

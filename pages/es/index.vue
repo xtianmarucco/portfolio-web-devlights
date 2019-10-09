@@ -9,7 +9,7 @@
         >
           <h1 class="display-1 mb-3">TRABAJOS</h1>
           <p
-            class="subheading font-weight-thin"
+            class="subheading font-weight-bold"
           >Nos enorgullecemos de poder brindar a las marcas soluciones integrales, sin importar en qué etapa se encuentren. Esto es lo que hemos logrado con nuestros clientes.</p>
         </v-flex>
       </v-layout>

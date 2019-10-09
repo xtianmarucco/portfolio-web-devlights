@@ -1,6 +1,8 @@
 [
   {
     "_id": 1,
+    "back": 6,
+    "next": 2,
     "client": {
       "urlImage": "/data/images/chbanner.gif",
       "name": "",
@@ -38,6 +40,8 @@
   },
   {
     "_id": 2,
+    "back": 1,
+    "next": 3,
     "client": {
       "urlImage": "/data/images/clients/livet.gif",
       "name": "",
@@ -85,6 +89,8 @@
   },
   {
     "_id": 3,
+    "back": 2,
+    "next": 4,
     "client": {
       "urlImage": "/data/images/clients/sas.gif",
       "name": " ",
@@ -124,6 +130,8 @@
   },
   {
     "_id": 4,
+    "back": 3,
+    "next": 5,
     "client": {
       "urlImage": "/data/images/clients/ceo.gif",
       "name": " ",
@@ -157,6 +165,8 @@
   },
   {
     "_id": 5,
+    "back": 4,
+    "next": 6,
     "styles": {
       "background": "background-color: white;"
     },
@@ -193,6 +203,8 @@
   },
   {
     "_id": 6,
+    "back": 5,
+    "next": 1,
     "client": {
       "urlImage": "/data/images/clients/box.gif",
       "txtBox1": "All your favourite food in one App",

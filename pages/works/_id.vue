@@ -75,25 +75,21 @@
     <!--  ch section -->
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
-        <v-layout row wrap>
-          <v-container ml-5 mr-5>
+        <v-layout md12 row wrap>
             <v-flex md12 xs12 justify-self-center text-xs-center>
-              <v-flex justify-self-center mt-5>
-                <img
-                  style="transform:scale(.8); height:10%; margin-top:25px;"
-                  :src="work.urlImages.clapper"
-                />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
-              </v-flex>
-              <v-flex>
-                <img
-                  style="transform:scale(.8); height:10%; margin-top:25px;"
-                  :src="work.urlImages.camera"
-                />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
-              </v-flex>
+              <v-layout row wrap>
+                <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
+                  <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
+                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
+                </v-flex>
+
+                <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
+                  <img style=" margin-top:25px;" :src="work.urlImages.camera" />
+                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
+                </v-flex>
+              </v-layout>
             </v-flex>
-          </v-container>
+          </v-layout>
         </v-layout>
 
         <v-layout row wrap xs12 text-xs-center my-5>
@@ -304,7 +300,7 @@
         <v-layout row wrap>
           <v-flex data-aos="fade-right" class="text-xs-center">
             <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
-            <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio4 }}</h4>
+            <h3 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio4 }}</h3>
             <v-container>
               <v-layout mt-5 row wrap>
                 <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
@@ -328,13 +324,13 @@
             <v-flex>
               <v-flex>
                 <img style="transform:scale(.8); height:10%;" :src="work.urlImages.location" />
-                <h4 style="padding-top:-500px;" text-xs-center>{{ work.client.txtOcio1 }}</h4>
+                <h3 style="padding-top:-500px;" text-xs-center>{{ work.client.txtOcio1 }}</h3>
               </v-flex>
 
               <img style="transform:scale(.8);" :src="work.urlImages.five" alt />
-              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2}}</h4>
+              <h3 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio2}}</h3>
               <img style="transform:scale(.8); padding-top:25px;" :src="work.urlImages.glass" alt />
-              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h4>
+              <h3 style="padding-top:25px" text-xs-center>{{ work.client.txtOcio3 }}</h3>
             </v-flex>
           </v-flex>
           <v-container>
@@ -443,15 +439,16 @@
 
           <v-layout row wrap>
             <v-flex md6 xs6 text-xs-center>
-              <v-btn round dark color="green" id href>
+              <v-btn round dark color="green" id :to="`/works/${work.back}`" nuxt>
                 <i class="material-icons" light-primary>keyboard_arrow_left</i>
                 prEVIOUS
               </v-btn>
             </v-flex>
 
             <v-flex md6 xs6 text-xs-center>
-              <v-btn @click round dark color="green" id href>
-                <i class="material-icons" light-primary>keyboard_arrow_right</i> NEXT
+              <v-btn round dark color="green" id href :to="`/works/${work.next}`" nuxt>
+                <i class="material-icons" light-primary>keyboard_arrow_right</i>
+                NEXT
               </v-btn>
             </v-flex>
           </v-layout>
@@ -540,6 +537,12 @@ export default {
       message: { required }
     }
   },
+  // function :sendMail() {
+
+    
+    
+  // }
+
 
   async mounted() {
     try {
