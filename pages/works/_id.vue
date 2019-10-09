@@ -76,6 +76,27 @@
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
+          <v-container ml-5 mr-5>
+            <v-flex md12 xs12 justify-self-center text-xs-center>
+              <v-flex justify-self-center mt-5>
+                <img
+                  style="transform:scale(.8); height:10%; margin-top:25px;"
+                  :src="work.urlImages.clapper"
+                />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
+              </v-flex>
+              <v-flex>
+                <img
+                  style="transform:scale(.8); height:10%; margin-top:25px;"
+                  :src="work.urlImages.camera"
+                />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
+              </v-flex>
+            </v-flex>
+          </v-container>
+        </v-layout>
+
+        <v-layout row wrap xs12 text-xs-center my-5>
           <v-flex ml-5 xs12>
             <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
           </v-flex>
@@ -83,8 +104,8 @@
       </v-container>
 
       <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
-        <v-container grid-list-xl>
-          <v-layout row class="grid-tech">
+        <v-container>
+          <v-layout xs12 text-xs-center my-5 row class="grid-tech">
             <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
               <img data-aos="flip-right" :src="item" alt />
 
@@ -170,9 +191,12 @@
             <v-flex xs12 md6 text-xs-center mb-5>
               <h1 class="livettext">{{work.livetAboutTitle1}}</h1>
               <div>
-                <h4 class="livettext">{{work.client.livetAboutTexta}}</h4>
-                <h4 class="livettext">{{work.client.livetAboutTextb}}</h4>
-                <h4 class="livettext">{{work.client.livetAboutTextc}}</h4>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.bone" />
+                <h3 class="livettext">{{work.client.livetAboutTexta}}</h3>"
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.dog" />
+                <h3 class="livettext">{{work.client.livetAboutTextb}}</h3>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.mice" />
+                <h3 class="livettext">{{work.client.livetAboutTextc}}</h3>
               </div>
             </v-flex>
           </v-layout>
@@ -208,21 +232,21 @@
               <img :src="work.urlImages.logoSas" alt />
             </v-flex>
 
-            <v-icon large text-xs-center>computer</v-icon>
+            <v-icon large text-xs-center color="#009A00">computer</v-icon>
 
             <h2 text-xs-center>Do all your paperwork and formalities from home</h2>
 
             <p text-xs-center>{{ work.client.tra1 }}</p>
 
-            <v-icon large text-xs-center>supervised_user_circle</v-icon>
+            <v-icon large text-xs-center color="#009A00">supervised_user_circle</v-icon>
             <h2 text-xs-center>More benefits for users</h2>
             <p text-xs-center>{{ work.client.tra2 }}</p>
 
-            <v-icon large text-xs-center>info</v-icon>
+            <v-icon large text-xs-center color="#009A00">info</v-icon>
             <h2 text-xs-center>Important information for civil entities just a click away</h2>
             <p>{{ work.client.tra3 }}</p>
 
-            <v-icon large text-xs-center>thumb_up</v-icon>
+            <v-icon large text-xs-center color="#009A00">thumb_up</v-icon>
             <h2 text-xs-center>Useful information</h2>
             <p text-xs-center>{{ work.client.tra3 }}</p>
           </v-flex>
@@ -379,13 +403,13 @@
     <!-- technologies -->
     <div>
       <v-container id="technologies-container" style="position:relative;">
-        <v-layout row wrap my-5 mt-5>
+        <v-layout row wrap xs12 text-xs-center my-5>
           <v-flex xs12 text-xs-center mt-5>
             <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
             <div class="line grey darken-4 mx-auto my-3"></div>
             <!-- SEPARADOR  -->
           </v-flex>
-          <v-layout ml-2 mr-2 row wrap class="grid-tech">
+          <v-layout row wrap ml-2 mr-2 class="grid-tech">
             <v-flex
               md12
               xs12

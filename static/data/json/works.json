@@ -3,14 +3,18 @@
     "_id": 1,
     "client": {
       "urlImage": "/data/images/chbanner.gif",
-      "name": ""
+      "name": "",
+      "about": "About Creative Humans",
+      "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
+      "story2": "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
+      "storyEs": "Creative Humans es una plataforma online desarrollada para ayudar a compañias a crear su historia acercando a profesionales audiovisuales y freelancers para crear su video contenido.",
+      "storyEs2": "Busca entre nuestros videos y perfiles para encontrar a los más talentosos productores audiovisuales para que conviertan tu idea en realidad."
     },
-    "about": "About Creative Humans",
-    "story": "Creative Humans is an online platform built to help companies develop their story by finding experienced filmmakers and freelancers to fill their RFP's and produce their branded video content.",
-    "story2": "Browse through videos and discover new, experienced talent who specialize in all forms of creative video assignments",
     "urlWork": "https://www.creativehumans.com/",
     "urlImages": {
       "notebook": "./../../data/images/clients/chlaptop.png",
+      "camera": "./../../data/images/camera.png",
+      "clapper": "./../../data/images/clapper.png",
       "imgMobile": [
         "/data/images/ch1.gif",
         "/data/images/ch2.gif",
@@ -54,6 +58,9 @@
       "background": "linear-gradient(0deg, #fbfbfb 0%, purple 100%)"
     },
     "urlImages": {
+      "bone": "/data/images/bone.png",
+      "dog": "/data/images/dog.png",
+      "mice": "/data/images/mouse-toy.png",
       "logoLivet": "/data/images/logolivet.png",
       "viewsMobile": "/data/images/vistas.png",
       "apple": "/data/images/Iphone6.png",
@@ -106,8 +113,9 @@
       "technologies": [
         "/data/images/footer/react.svg",
         "/data/images/footer/php-1.svg",
-        "/data/images/footer/bootstrap-4.svg",
-        "/data/images/footer/laravel-1.svg"
+        "/data/images/footer/laravel-1.svg",
+        "/data/images/footer/dotnet.gif",
+        "/data/images/footer/bootstrap-4.svg"
       ]
     },
     "services": [

@@ -76,6 +76,26 @@
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
+          <v-container ml-5 mr-5>
+            <v-flex md12 xs12 justify-self-center text-xs-center>
+              <v-flex justify-self-center mt-5>
+                <img
+                  style="transform:scale(.8); height:10%; margin-top:25px;"
+                  :src="work.urlImages.clapper"
+                />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs}}</h3>
+              </v-flex>
+              <v-flex>
+                <img
+                  style="transform:scale(.8); height:10%; margin-top:25px;"
+                  :src="work.urlImages.camera"
+                />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs2}}</h3>
+              </v-flex>
+            </v-flex>
+          </v-container>
+        </v-layout>
+        <v-layout row wrap class="grid-tech">
           <v-flex ml-5 xs12>
             <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
           </v-flex>
@@ -84,7 +104,7 @@
 
       <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
         <v-container grid-list-xl>
-          <v-layout row class="grid-tech">
+          <v-layout row wrap ml-2 mr-2 class="grid-tech">
             <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
               <img data-aos="flip-right" :src="item" alt />
 
@@ -170,9 +190,12 @@
             <v-flex xs12 md6 text-xs-center mb-5>
               <h1 class="livettext">{{work.client.livetAboutTitleEs2}}</h1>
               <div>
-                <h4 style="margin-top:25px;" class="livettext">{{work.client.livetAboutTextEs3}}</h4>
-                <h4 style="margin-top:25px;" class="livettext">{{work.client.livetAboutTextEs2}}</h4>
-                <h4 style="margin-top:25px;" class="livettext">{{work.client.livetAboutTextEs1}}</h4>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.bone" />
+                <h2 style="margin-top:25px;" class="livettext">{{work.client.livetAboutTextEs3}}</h2>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.mice" />
+                <h2 style="margin-top:25px; " class="livettext">{{work.client.livetAboutTextEs2}}</h2>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.dog" />
+                <h2 style="margin-top:25px;  " class="livettext">{{work.client.livetAboutTextEs1}}</h2>
               </div>
             </v-flex>
           </v-layout>
@@ -208,21 +231,21 @@
               <img :src="work.urlImages.logoSas" alt />
             </v-flex>
 
-            <v-icon large text-xs-center>computer</v-icon>
+            <v-icon large text-xs-center color="#009A00">computer</v-icon>
 
             <h2 text-xs-center>Todos tus tramites desde la comodidad de tu casa</h2>
 
             <p text-xs-center>{{ work.client.traEs1 }}</p>
 
-            <v-icon large text-xs-center>supervised_user_circle</v-icon>
+            <v-icon large text-xs-center color="#009A00">supervised_user_circle</v-icon>
             <h2 text-xs-center>Señor suscriptor</h2>
             <p text-xs-center>{{ work.client.es.traEs2 }}</p>
 
-            <v-icon large text-xs-center>info</v-icon>
+            <v-icon large text-xs-center color="#009A00">info</v-icon>
             <h2 text-xs-center>Informacion importante para entidades civiles</h2>
             <p>{{ work.client.es.traEs3 }}</p>
 
-            <v-icon large text-xs-center>thumb_up</v-icon>
+            <v-icon large text-xs-center color="#009A00">thumb_up</v-icon>
             <h2 text-xs-center>Información util</h2>
             <p text-xs-center>{{ work.client.es.traEs4 }}</p>
           </v-flex>
@@ -302,12 +325,14 @@
               <v-img style="transform:scale(.8);" :src="work.urlImages.ocioLogo" alt />
             </v-flex>
             <v-flex>
-              <img src="/data/images/location.gif" alt srcset />
-              <h4 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcioEs4 }}</h4>
-              <img style="padding-top:25px" src="/data/images/glass.gif" alt srcset />
+              <v-flex>
+                <img style="transform:scale(.8); height:10%;" :src="work.urlImages.location" />
+                <h4 style="padding-top:-500px;" text-xs-center>{{ work.client.txtOcioEs1 }}</h4>
+              </v-flex>
+              <img style="transform:scale(.8);" :src="work.urlImages.five" alt />
               <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs2}}</h4>
-              <img style="padding-top:25px" src="/data/images/hfive.gif" alt srcset />
-              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs3 }}</h4>
+              <img style="transform:scale(.8); padding-top:25px;" :src="work.urlImages.glass" alt />
+              <h4 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs2 }}</h4>
             </v-flex>
           </v-flex>
           <v-container>
@@ -378,30 +403,33 @@
       <v-container id="technologies-container" style="position:relative;">
         <v-layout row wrap my-5 mt-5>
           <v-flex xs12 text-xs-center mt-5>
-            <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
+            <h2 mt-5>TECNOLOGIAS USADAS EN ESTE PROYECTO</h2>
             <div class="line grey darken-4 mx-auto my-3"></div>
             <!-- SEPARADOR  -->
           </v-flex>
-          <v-layout ml-2 mr-2 row wrap class="grid-tech">
-            <v-flex
-              md12
-              xs12
-              justify-self-center
-              v-for="item in work.urlImages.technologies"
-              :key="item"
-            >
-              <img
-                align-center
+          <v-container>
+            <v-layout row wrap ml-2 mr-2 class="grid-tech">
+              <v-flex
+                md12
+                xs12
                 justify-self-center
-                height="200px"
-                width="300px"
-                style="transform:scale(.8);"
-                data-aos="fade-up"
-                :src="item"
-                alt
-              />
-            </v-flex>
-          </v-layout>
+                v-for="item in work.urlImages.technologies"
+                :key="item"
+              >
+                <img
+                  ml-5
+                  align-center
+                  justify-self-center
+                  height="200px"
+                  width="300px"
+                  style="transform:scale(.8);"
+                  data-aos="fade-up"
+                  :src="item"
+                  alt
+                />
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-layout>
       </v-container>
     </div>
@@ -410,7 +438,7 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xs12 text-xs-center>
-            <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+            <v-btn round color="#FF9800" @click="drawer = !drawer">TRABAJEMOS JUNTOS</v-btn>
           </v-flex>
           <!-- next and previous -->
 
@@ -455,7 +483,12 @@
 
                     <v-textarea v-model="form.message" label="Message" required outline></v-textarea>
 
-                    <v-btn type="submit" round color="primary" :disabled="$v.$invalid">send message</v-btn>
+                    <v-btn
+                      type="submit"
+                      round
+                      color="primary"
+                      :disabled="$v.$invalid"
+                    >Enviar mensaje</v-btn>
                   </v-form>
                 </v-flex>
               </v-layout>
