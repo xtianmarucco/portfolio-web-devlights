@@ -2,7 +2,7 @@ language: node_js
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $2rQyGzkMaOo67ROsawhi2A # Set in the settings page of your repository, as a secure variable
+  github_token: b9365bffa453eab96438c0a8b08edd9965ddc4f6 # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
     branch: master
