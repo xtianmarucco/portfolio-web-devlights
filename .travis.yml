@@ -1,8 +1,27 @@
 language: node_js
+node_js:
+  - "10.16.3"
+
+cache:
+  directories:
+    - "node_modules"
+
+branches:
+  only:
+  - master
+
+install:
+  - npm install
+  - npm run generate
+
+script:
+  - echo "Skipping tests"
+
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: 079942935d8416634b3ba30fb69f6318939ce207 # Set in the settings page of your repository, as a secure variable
-  keep_history: true
+  skip-cleanup: true
+  github-token: 571a4f2c8b6ea166fc4c7ddc38f9cd1adeb6ff4d  # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  target-branch: gh-pages
+  local-dir: dist
   on:
     branch: master
