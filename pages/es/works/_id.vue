@@ -300,7 +300,7 @@
         <v-layout row wrap>
           <v-flex data-aos="fade-right" class="text-xs-center">
             <v-img style="transform: scale(0.8)" :src="work.urlImages.ocioShots" alt />
-            <h3 style="padding-top:25px" text-xs-center>{{ work.client.txtOcioEs1 }}</h3>
+            <h3 style="padding-top:25px;" text-xs-center>{{ work.client.txtOcioEs1 }}</h3>>
             <v-container>
               <v-layout mt-5 row wrap>
                 <v-img style="transform:scale(.5);" :src="work.urlImages.ocioDownload1" alt />
@@ -438,7 +438,7 @@
         </v-btn>
       </v-flex>
 
-      <v-flex md6 xs6 text-xs-center3
+      <v-flex md6 xs6 text-xs-center>
         <v-btn round dark color="green" id href :to="`/works/${work.next}`" nuxt>
           <i class="material-icons" light-primary>keyboard_arrow_right</i>
           NEXT

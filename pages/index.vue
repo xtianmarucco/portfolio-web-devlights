@@ -9,7 +9,7 @@
         >
           <h1 class="display-1 mb-3">WORK</h1>
           <p
-            class="subheading font-weight-thin"
+            class="subheading font-weight-bold"
           >We pride ourselves on being able to provide brands with holistic solutions, no matter what stage they’re at. Here’s what we've accomplished with our clients.</p>
         </v-flex>
       </v-layout>

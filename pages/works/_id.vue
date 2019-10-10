@@ -76,20 +76,19 @@
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout md12 row wrap>
-            <v-flex md12 xs12 justify-self-center text-xs-center>
-              <v-layout row wrap>
-                <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
-                  <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
-                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
-                </v-flex>
+          <v-flex md12 xs12 justify-self-center text-xs-center>
+            <v-layout row wrap>
+              <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
+                <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
+              </v-flex>
 
-                <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
-                  <img style=" margin-top:25px;" :src="work.urlImages.camera" />
-                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-          </v-layout>
+              <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
+                <img style=" margin-top:25px;" :src="work.urlImages.camera" />
+                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
+              </v-flex>
+            </v-layout>
+          </v-flex>
         </v-layout>
 
         <v-layout row wrap xs12 text-xs-center my-5>
@@ -539,10 +538,7 @@ export default {
   },
   // function :sendMail() {
 
-    
-    
   // }
-
 
   async mounted() {
     try {
@@ -578,12 +574,6 @@ export default {
 </script>
 
 <style lang="scss">
-.img-client {
-  .v-responsive__content {
-    // background-color: rgba(0, 0, 0, 0.25);
-  }
-}
-
 .grid-tech {
   display: grid;
   align-items: center;
