@@ -76,26 +76,21 @@
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in">
         <v-layout row wrap>
-          <v-layout md12 row wrap>
+          <v-layout row wrap>
             <v-flex md12 xs12 justify-self-center text-xs-center>
               <v-layout row wrap>
-                <v-flex md6 xs12 justify-self-center mt-5>
-                  <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
-                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs}}</h3>
+                <v-flex md6 xs12 justify-self-center>
+                  <img :src="work.urlImages.clapper" />
+                  <h3 justify-self-center>{{work.client.story}}</h3>
                 </v-flex>
 
-                <v-flex md6 xs12 justify-self-center mt-5>
-                  <img style=" margin-top:25px;" :src="work.urlImages.camera" />
-                  <h3 style="margin-top:25px;" justify-self-center>{{work.client.storyEs2}}</h3>
+                <v-flex md6 xs12 justify-self-center>
+                  <img :src="work.urlImages.camera" />
+                  <h3 justify-self-center>{{work.client.story2}}</h3>
                 </v-flex>
               </v-layout>
             </v-flex>
           </v-layout>
-        </v-layout>
-        <v-layout row wrap class="grid-tech">
-          <v-flex ml-5 xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
-          </v-flex>
         </v-layout>
       </v-container>
 
@@ -115,24 +110,15 @@
         </v-container>
       </div>
 
-      <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
+      <!-- <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
         <v-container>
           <v-layout row wrap>
-            <v-flex
-              xs12
-              md6
-              v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
-              :key="imgDesktop"
-            >
-              <v-img
-                :src="imgDesktop"
-                class="mx-2"
-                :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
-              ></v-img>
+            <v-flex>
+              <v-img></v-img>
             </v-flex>
           </v-layout>
         </v-container>
-      </div>
+      </div>-->
     </div>
 
     <!-- livet sections logo&views -->
@@ -440,8 +426,8 @@
 
       <v-flex md6 xs6 text-xs-center>
         <v-btn round dark color="green" id href :to="`/works/${work.next}`" nuxt>
-          <i class="material-icons" light-primary>keyboard_arrow_right</i>
           NEXT
+          <i class="material-icons" light-primary>keyboard_arrow_right</i>
         </v-btn>
       </v-flex>
     </v-layout>

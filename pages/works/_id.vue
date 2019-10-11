@@ -74,55 +74,30 @@
     </v-container>
     <!--  ch section -->
     <div class="py-5" v-if="work.urlImages.notebook">
-      <v-container data-aos="zoom-in">
-        <v-layout md12 row wrap>
+      <v-container data-aos="zoom-in" class="grid-tech">
+        <v-layout ml3 mr-3 mt-5 row wrap justify-self-center text-xs-center>
           <v-flex md12 xs12 justify-self-center text-xs-center>
             <v-layout row wrap>
-              <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
-                <img style=" margin-top:25px;" :src="work.urlImages.clapper" />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story}}</h3>
+              <v-flex md6 xs12 justify-self-center>
+                <img :src="work.urlImages.clapper" />
+                <h3 mt-5 justify-self-center>{{work.client.story}}</h3>
               </v-flex>
 
-              <v-flex md5 xs12 justify-self-center mt-5 mr-5 ml-5>
-                <img style=" margin-top:25px;" :src="work.urlImages.camera" />
-                <h3 style="margin-top:25px;" justify-self-center>{{work.client.story2}}</h3>
+              <v-flex md6 xs12 justify-self-center>
+                <img :src="work.urlImages.camera" />
+                <h3 mt-5 justify-self-center>{{work.client.story2}}</h3>
               </v-flex>
             </v-layout>
-          </v-flex>
-        </v-layout>
-
-        <v-layout row wrap xs12 text-xs-center my-5>
-          <v-flex ml-5 xs12>
-            <v-img :src="work.urlImages.notebook" :alt="`${work.client.name} logoLivet size image`"></v-img>
           </v-flex>
         </v-layout>
       </v-container>
 
       <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
-        <v-container>
-          <v-layout xs12 text-xs-center my-5 row class="grid-tech">
+        <v-container grid-list-xl>
+          <v-layout row wrap ml-2 mr-2 class="grid-tech">
             <v-flex justify-self-center v-for="item in work.urlImages.imgMobile" :key="item">
               <img data-aos="flip-right" :src="item" alt />
 
-              <v-img
-                :src="imgDesktop"
-                class="mx-2"
-                :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
-              ></v-img>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </div>
-
-      <div class="py-5" v-if="work.urlImages.desktop && work.urlImages.desktop.length > 0">
-        <v-container>
-          <v-layout row wrap>
-            <v-flex
-              xs12
-              md6
-              v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
-              :key="imgDesktop"
-            >
               <v-img
                 :src="imgDesktop"
                 class="mx-2"
@@ -446,8 +421,8 @@
 
             <v-flex md6 xs6 text-xs-center>
               <v-btn round dark color="green" id href :to="`/works/${work.next}`" nuxt>
-                <i class="material-icons" light-primary>keyboard_arrow_right</i>
                 NEXT
+                <i class="material-icons" light-primary>keyboard_arrow_right</i>
               </v-btn>
             </v-flex>
           </v-layout>
