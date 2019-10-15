@@ -91,6 +91,17 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <v-container grid-list-xs>
+        <v-flex data-aos="fade-left" md12 xs12>
+          <v-img
+            style="heigth:250px;"
+            align-center
+            justify-self-center
+            :src="work.urlImages.notebook"
+            alt
+          />
+        </v-flex>
+      </v-container>
 
       <div v-if="work.urlImages.imgMobile && work.urlImages.imgMobile.length > 0">
         <v-container grid-list-xl>
