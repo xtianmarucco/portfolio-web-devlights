@@ -417,9 +417,12 @@
     <div>
       <v-container>
         <v-layout row wrap>
-          <v-flex xs12 text-xs-center>
-            <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
-          </v-flex>
+          <v-container grid-list-md>
+            <v-flex class="fixed-btn" xs12>
+              <v-btn round color="#FF9800" @click="drawer = !drawer">LET'S WORK TOGETHER</v-btn>
+            </v-flex>
+          </v-container>
+
           <!-- next and previous -->
 
           <v-layout row wrap>
@@ -565,6 +568,32 @@ export default {
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fixed-btn {
+  width: 800px;
+  position: fixed;
+  top: 90%;
+  margin-left: 3%;
+  z-index: 1;
+  animation: pulse 1s infinite;
+  // position: relative;
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 // btn animation
