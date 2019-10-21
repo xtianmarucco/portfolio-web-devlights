@@ -392,14 +392,12 @@
       </v-container>
     </div>
 
-    <!-- technologies -->
     <div>
       <v-container id="technologies-container" style="position:relative;">
         <v-layout row wrap my-5 mt-5>
           <v-flex xs12 text-xs-center mt-5>
             <h2 mt-5>TECNOLOGIAS USADAS EN ESTE PROYECTO</h2>
             <div class="line grey darken-4 mx-auto my-3"></div>
-            <!-- SEPARADOR  -->
           </v-flex>
           <v-container>
             <v-layout row wrap ml-2 mr-2 class="grid-tech">
@@ -448,9 +446,7 @@
           <v-flex xs12 text-xs-center>
             <v-btn round color="#FF9800" @click="drawer = !drawer">TRABAJEMOS JUNTOS</v-btn>
           </v-flex>
-          <!-- next and previous -->
 
-          <!-- next and previous -->
           <v-container>
             <v-layout row wrap width="100%" right>
               <v-btn fab dark color="blue" id="btnScrollToTop" href="#top">

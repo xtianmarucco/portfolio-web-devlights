@@ -1,5 +1,5 @@
 <template>
-  <div v-if="work" :style="work.styles">
+  <div v-if="work" :style="work.styles" style>
     <v-toolbar
       app
       height="80px"
@@ -47,7 +47,7 @@
               class="text-uppercase title font-weight-medium white--text"
             >{{ work.services.toString() }}</p>
 
-            <v-layout row wrap width="100%" justify-center>
+            <v-layout row wrap justify-center>
               <v-btn fab light absolute id="scroll-down">
                 <i class="material-icons" light-primary>arrow_downward</i>
               </v-btn>
@@ -72,6 +72,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+
     <!--  ch section -->
     <div class="py-5" v-if="work.urlImages.notebook">
       <v-container data-aos="zoom-in" class="grid-tech">
@@ -121,7 +122,7 @@
     </div>
 
     <!-- livet sections logo&views -->
-    <div style="margin-top:-300px;">
+    <div>
       <div style="position:relative;" id="livetsection1">
         <v-layout row wrap align-center justify-center class="mt-15">
           <v-flex
@@ -184,10 +185,101 @@
         </v-container>
       </div>
     </div>
+
+    <!-- box section-->
+
+    <div>
+      <v-container style="margin-top:-250px;">
+        <v-layout row wrap>
+          <v-flex data-aos="fade-right" md6 xs12 align-center justify-self-center>
+            <v-img style="transform:scale(.8);" :src="work.urlImages.boxLogo" />
+            <v-flex ml-5 mr-5>
+              <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
+              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox4 }}</h2>
+            </v-flex>
+            <v-layout justify-center row wrap mt-5 ml-5 mr-5>
+              <v-flex md3 xs4 align-center>
+                <v-img :src="work.urlImages.download1" alt />
+              </v-flex>
+
+              <v-flex ml-5 md3 xs4 align-center>
+                <v-img :src="work.urlImages.download2" alt />
+              </v-flex>
+            </v-layout>
+          </v-flex>
+
+          <v-flex data-aos="fade-left" md6 xs12>
+            <v-img
+              style="heigth:250px;"
+              align-center
+              justify-self-center
+              :src="work.urlImages.boxMobile"
+              alt
+            />
+          </v-flex>
+        </v-layout>
+        <v-container mb-5>
+          <v-layout row wrap style="margin-top: 15%;">
+            <v-flex data-aos="fade-right" md6 xs12>
+              <v-img :src="work.urlImages.boxViews1" />
+            </v-flex>
+
+            <v-flex data-aos="fade-left" md6 xs12>
+              <v-img :src="work.urlImages.boxViews2" />
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-container>
+    </div>
+
+    <!-- ceo section  -->
+    <div style="position:relative;" id="ceo-section">
+      <v-container style="margin-top:400px;">
+        <v-layout row wrap style="margin-top: 15%;">
+          <v-flex
+            xs12
+            md6
+            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
+            :key="imgDesktop"
+          >
+            <v-img
+              :src="imgDesktop"
+              class="mx-2"
+              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
+            ></v-img>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
+      <v-container style="margin-top:20%;">
+        <v-layout row wrap align-center justify-center>
+          <v-flex xs12 md10 align-center justify-center>
+            <v-layout row wrap>
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg1" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg2" alt />
+              </v-flex>
+
+              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
+                <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
+                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg3" alt />
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
     <!-- sas mobile  -->
 
     <div id="sas-section" v-if="work.urlImages.mobileSas && work.urlImages.mobileSas.length> 0">
-      <v-container>
+      <v-container l>
         <v-layout row wrap>
           <v-flex>
             <v-img></v-img>
@@ -195,7 +287,7 @@
         </v-layout>
       </v-container>
 
-      <v-container grid-list-xl style="margin-top:350px;">
+      <v-container grid-list-xl style="margin-top:-350px;">
         <v-layout row wrap>
           <v-flex v-for="item in work.urlImages.mobileSas" :key="item">
             <img :src="item" alt />
@@ -235,52 +327,9 @@
       </v-container>
     </div>
 
-    <!-- ceo section  -->
-    <div style="position:relative;" id="ceo-section">
-      <v-container style="margin-top:400px;">
-        <v-layout row wrap>
-          <v-flex
-            xs12
-            md6
-            v-for="(imgDesktop, indexImgDesktop) in work.urlImages.desktop"
-            :key="imgDesktop"
-          >
-            <v-img
-              :src="imgDesktop"
-              class="mx-2"
-              :alt="`${work.client.name} desktop size image - ${indexImgDesktop}`"
-            ></v-img>
-          </v-flex>
-        </v-layout>
-      </v-container>
-
-      <v-container>
-        <v-layout row wrap align-center justify-center>
-          <v-flex xs12 md10 align-center justify-center>
-            <v-layout row wrap style="margin-top:200px;  margin-bottom:-400px;">
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 text-xs-center>{{ work.client.txtCeo1 }}</h2>
-                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg1" alt />
-              </v-flex>
-
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 pl-5 pr-5 text-xs-center>{{ work.client.txtCeo2 }}</h2>
-                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg2" alt />
-              </v-flex>
-
-              <v-flex md4 xs12 align-center justify-self-center class="text-xs-center">
-                <h2 text-xs-center>{{ work.client.txtCeo3 }}</h2>
-                <v-img style="transform:scale(.6);" :src="work.urlImages.ceoImg3" alt />
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-
     <!-- ocio section  -->
 
-    <div id="ocio-section" style="position:relative;">
+    <div id="ocio-section">
       <v-container grid-list-xl>
         <v-layout row wrap>
           <v-flex data-aos="fade-right" class="text-xs-center">
@@ -333,62 +382,12 @@
       </v-container>
     </div>
 
-    <!-- box section-->
-
     <div>
-      <v-container style="margin-top:-250px;">
-        <v-layout row wrap>
-          <v-flex data-aos="fade-right" md6 xs12 align-center justify-self-center>
-            <v-img style="transform:scale(.8);" :src="work.urlImages.boxLogo" />
-            <v-flex ml-5 mr-5>
-              <h2 style="padding-top:25px;" text-xs-center>{{ work.client.txtBox1 }}</h2>
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox2 }}</h2>
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox3 }}</h2>
-              <h2 style="padding-top:25px" text-xs-center>{{ work.client.txtBox4 }}</h2>
-            </v-flex>
-            <v-layout justify-center row wrap mt-5 ml-5 mr-5>
-              <v-flex md3 xs4 align-center>
-                <v-img :src="work.urlImages.download1" alt />
-              </v-flex>
-
-              <v-flex ml-5 md3 xs4 align-center>
-                <v-img :src="work.urlImages.download2" alt />
-              </v-flex>
-            </v-layout>
-          </v-flex>
-
-          <v-flex data-aos="fade-left" md6 xs12>
-            <v-img
-              style="heigth:250px;"
-              align-center
-              justify-self-center
-              :src="work.urlImages.boxMobile"
-              alt
-            />
-          </v-flex>
-        </v-layout>
-        <v-container mb-5>
-          <v-layout row wrap>
-            <v-flex data-aos="fade-right" md6 xs12>
-              <v-img :src="work.urlImages.boxViews1" />
-            </v-flex>
-
-            <v-flex data-aos="fade-left" md6 xs12>
-              <v-img :src="work.urlImages.boxViews2" />
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-container>
-    </div>
-
-    <!-- technologies -->
-    <div>
-      <v-container id="technologies-container" style="position:relative;">
+      <v-container id="technologies-container">
         <v-layout row wrap xs12 text-xs-center my-5>
           <v-flex xs12 text-xs-center mt-5>
             <h2 mt-5>TECHNOLOGIES USED IN THIS PROJECT</h2>
             <div class="line grey darken-4 mx-auto my-3"></div>
-            <!-- SEPARADOR  -->
           </v-flex>
           <v-layout row wrap ml-2 mr-2 class="grid-tech">
             <v-flex
@@ -423,8 +422,6 @@
             </v-flex>
           </v-container>
 
-          <!-- next and previous -->
-
           <v-layout row wrap>
             <v-flex md6 xs6 text-xs-center>
               <v-btn round dark color="green" id :to="`/works/${work.back}`" nuxt>
@@ -441,7 +438,6 @@
             </v-flex>
           </v-layout>
 
-          <!-- next and previous -->
           <v-container>
             <v-layout row wrap width="100%" right>
               <v-btn fab dark color="blue" id="btnScrollToTop" href="#top">
@@ -575,7 +571,7 @@ export default {
   position: fixed;
   top: 90%;
   margin-left: 3%;
-  z-index: 1;
+  z-index: 8;
   animation: pulse 1s infinite;
   // position: relative;
 }
