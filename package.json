@@ -17,7 +17,7 @@
     "aos": "^2.3.4",
     "cookie-universal-nuxt": "^2.0.16",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mailgun.js": "^2.0.1",
     "nuxt": "^2.8.1",
     "smooth-scroll": "^16.1.0",
